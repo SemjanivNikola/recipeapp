@@ -20,7 +20,7 @@ const RecipeList = ({ list }: RecipeListProps) => {
       <tbody>
         {list.map((item, index) => {
           return (
-            <tr>
+            <tr key={item.id}>
               <td>{index}</td>
               <td>{item.title}</td>
               <td>{item.dateCreated}</td>
