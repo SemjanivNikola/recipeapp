@@ -1,3 +1,5 @@
+import s from "./dashboard.module.css";
+
 interface RecipeListProps {
   list: {
     id: string;
@@ -9,9 +11,9 @@ interface RecipeListProps {
 
 const RecipeList = ({ list }: RecipeListProps) => {
   return (
-    <table>
+    <table className={s.tableList}>
       <thead>
-        <th></th>
+        <th className={s.firstCol}></th>
         <th>Title</th>
         <th>Created</th>
       </thead>
