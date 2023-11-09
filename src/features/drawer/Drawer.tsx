@@ -1,23 +1,23 @@
-import Icon from "../../components/Icon";
+import Icon from "@/components/icons/Icon";
 
 const Drawer = () => {
   return (
     <div className="drawer-wrapper">
       <div style={{ height: "8rem" }}>Logo</div>
       <a href="/" className="drawer-link active">
-        <Icon name="plus" />
+        <Icon name="dashboard" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>DASHBOARD</span>
       </a>
       <a href="/my-recipes" className="drawer-link">
-        <Icon name="plus" />
+        <Icon name="layers" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>MY RECIPES</span>
       </a>
       <a href="/create-recipe" className="drawer-link">
-        <Icon name="plus" />
+        <Icon name="layers-plus" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>CREATE RECIPE</span>
       </a>
       <button className="drawer-link">
-        <Icon name="plus" />
+        <Icon name="signout" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>SIGN OUT</span>
       </button>
     </div>
