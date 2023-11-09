@@ -1,7 +1,14 @@
-.header {
-    padding: 1.5rem;
-}
-
 h1 {
     font-size: 42px;
+}
+
+@media (max-width: 756px) {
+    .header {
+        display: none;
+    }
+}
+@media (min-width: 756px) {
+    .header {
+        padding: 1.5rem;
+    }
 }
