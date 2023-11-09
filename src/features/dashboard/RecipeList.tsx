@@ -13,9 +13,11 @@ const RecipeList = ({ list }: RecipeListProps) => {
   return (
     <table className={s.tableList}>
       <thead>
-        <th className={s.firstCol}></th>
-        <th>Title</th>
-        <th>Created</th>
+        <tr>
+          <th className={s.firstCol}></th>
+          <th>Title</th>
+          <th>Created</th>
+        </tr>
       </thead>
       <tbody>
         {list.map((item, index) => {
