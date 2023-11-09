@@ -1,4 +1,4 @@
-import ScreenHeader from "@/components/scren-header/ScreenHeader";
+import ScreenHeader from "@/components/screen-header/ScreenHeader";
 import s from "./dashboard.module.css";
 
 const Dashboard = () => {
