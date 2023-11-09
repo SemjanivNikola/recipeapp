@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <div className={s.screen}>
       <ScreenHeader title="Dashboard" />
-      <div className="content">
+      <div className={s.content}>
         <Searchbar />
         <RecipeList list={recipeList} />
       </div>
