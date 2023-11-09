@@ -6,3 +6,22 @@
     justify-content: flex-start;
     gap: 1rem;
 }
+
+.searchbarBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-end;
+    background-color: #71bc68;
+    transition: all 300ms;
+}
+
+.searchbarBtn:hover {
+    background-color: transparent;
+    border-color: #71bc68;
+    color: #000;
+}
+
+.searchbarBtn:hover svg {
+    fill: #000;
+}

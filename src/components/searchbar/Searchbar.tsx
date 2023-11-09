@@ -5,7 +5,11 @@ const Searchbar = () => {
   return (
     <div id={s.searchbar}>
       <Icon name="magnify" />
-      <input type="text" />
+      <input type="text" style={{ flexGrow: 1 }} />
+      <button className={s.searchbarBtn}>
+        <Icon name="plus" color="#fff" />
+        Create recipe
+      </button>
     </div>
   );
 };
