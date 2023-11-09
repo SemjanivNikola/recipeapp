@@ -1,0 +1,36 @@
+.screen {
+    width: 80%;
+    height: inherit;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.tableList {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.firstCol {
+    width: 25px;
+    min-width: 25px;
+}
+
+th {
+    text-transform: uppercase;
+    background-color: rgb(111, 189, 102);
+}
+
+th, td {
+    padding: .5rem;
+}
+
+tr {
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: rgba(111, 189, 102, .15);
+}

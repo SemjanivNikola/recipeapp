@@ -13,6 +13,7 @@ const Searchbar = () => {
           value={search}
           name="search"
           type="text"
+          placeholder="Search by title"
           onChange={(e) => setSearch(e.target.value)}
           className={s.searchInput}
         />
