@@ -5,6 +5,7 @@ type IconName =
   | "dashboard"
   | "layers-plus"
   | "layers"
+  | "magnify"
   | "plus"
   | "signout";
 
