@@ -2,7 +2,7 @@ import Icon from "@/components/icons/Icon";
 
 const Drawer = () => {
   return (
-    <div className="drawer-wrapper">
+    <div id="drawer">
       <div style={{ height: "8rem" }}>Logo</div>
       <a href="/" className="drawer-link active">
         <Icon name="dashboard" />
@@ -16,7 +16,7 @@ const Drawer = () => {
         <Icon name="layers-plus" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>CREATE RECIPE</span>
       </a>
-      <button className="drawer-link">
+      <button className="drawer-btn">
         <Icon name="signout" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>SIGN OUT</span>
       </button>
