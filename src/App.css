@@ -18,6 +18,13 @@ body {
   color: #213547;
 }
 
+#main {
+  height: inherit;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 /* =========== Drawer =========== */
 #drawer {
   position: relative;
