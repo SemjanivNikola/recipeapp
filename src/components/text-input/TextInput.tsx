@@ -21,6 +21,7 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
         >
           {label}
         </label>
+        <span className={s.focusIndicator}></span>
       </div>
       <p className={s.inputError}>{error}</p>
     </div>
