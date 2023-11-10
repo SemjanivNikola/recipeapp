@@ -25,6 +25,11 @@ body {
   justify-content: flex-start;
 }
 
+.screen {
+    width: 80%;
+    height: inherit;
+}
+
 /* =========== Drawer =========== */
 #drawer {
   position: relative;
