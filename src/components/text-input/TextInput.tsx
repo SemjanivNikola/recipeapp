@@ -1,6 +1,6 @@
 import { forwardRef, useRef } from "react";
 import TextInputProps from "./TextInputProps";
-import style from "./text-input.module.css";
+import s from "./text-input.module.css";
 
 const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function TextInput(
   { label, isFocused = false, error, ...otherProps },
@@ -16,13 +16,13 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
         <label
           id={`${otherProps.name}-label`}
           htmlFor={otherProps.name}
-          className={`${style.input_label} ${style.idle} absolute px-s`}
+          className={`${s.inputLabel} absolute px-s`}
           style={{ transform: "translateY(-50%)" }}
         >
           {label}
         </label>
       </div>
-      <p className={style.input_error}>{error}</p>
+      <p className={s.inputError}>{error}</p>
     </div>
   );
 });
