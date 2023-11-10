@@ -11,19 +11,35 @@ input {
     padding-top: .5rem;
 }
 
-input:focus + .input_label,
-input:not([value=""]) + .input_label {
-    top: 0;
-    font-size: .875rem;
+.focusIndicator {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #71bc68;
+    transition: width 150ms ease-in-out;
 }
 
-.input_label {
+input:focus + .inputLabel,
+input:not([value=""]) + .inputLabel {
+    top: 0;
+    font-size: .875rem;
+    color: #71bc68;
+}
+
+input:focus ~ .focusIndicator {
+    width: 100%;
+}
+
+.inputLabel {
     top: 50%;
     left: 0;
     transition: all 150ms ease-out;
 }
 
-.input_error {
+.inputError {
     height: 1rem;
     padding-top: .5rem;
     font-size: .25rem;
