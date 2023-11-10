@@ -10,7 +10,7 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
   const input = useRef<HTMLInputElement>(inputRef);
 
   return (
-    <div className="relative mb-s text-start">
+    <div className="relative mb-m text-start">
       <div className="relative">
         <input autoFocus={isFocused} ref={input} {...otherProps} />
         <label
