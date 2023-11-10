@@ -1,6 +1,7 @@
 import TextInput from "@/components/text-input/TextInput";
 import { useState } from "react";
 import s from "./auth.module.css";
+import { Link } from "react-router-dom";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -20,6 +21,14 @@ const LoginScreen = () => {
             onChange={(e) => setPass(e.target.value)}
           />
           <button className={s.submitBtn}>Sign In</button>
+          <span className={s.divider}></span>
+          <p className={s.text}>
+            Don't have an account?
+            <Link to="/register">
+              {" "}
+              <u>Sign up</u>
+            </Link>
+          </p>
         </form>
       </div>
     </div>

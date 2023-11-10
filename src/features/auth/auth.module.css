@@ -53,3 +53,16 @@
 .submitBtn:focus {
     outline: 1px solid rgb(63, 131, 54)
 }
+
+.divider {
+    display: block;
+    height: 1px;
+    width: 65%;
+    background-color: rgba(204, 204, 204, 0.25);
+    margin: 2rem auto .5rem;
+}
+
+.text {
+    font-size: 12px;
+    text-align: center;
+}
