@@ -1,28 +1,15 @@
+import LoginScreen from "@/features/auth/LoginScreen";
+import RegisterScreen from "@/features/auth/RegisterScreen";
 import DashboardScreen from "@/features/dashboard/DashboardScreen";
 import MyRecipesScreen from "@/features/my-recipes/MyRecipesScreen";
 import RecipeDetailsScreen from "@/features/recipe-details/RecipeDetailsScreen";
-import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
-import AppEntry from "./AppEntry";
-
-// TODO:Authentication
-function isAuthenticated() {
-  return true;
-}
-
-const PrivateRouter = () => {
-  return isAuthenticated() ? (
-    <AppEntry>
-      <Outlet />
-    </AppEntry>
-  ) : (
-    <Navigate to="/login" replace />
-  );
-};
+import { createBrowserRouter } from "react-router-dom";
+import PrivateRouter from "./PrivateRouter";
 
 const Router = createBrowserRouter([
   // TODO: Auth - Public routes
-  //   { path: "/login", element: <Login /> },
-  //   { path: "/register", element: <Register /> },
+  { path: "/login", element: <LoginScreen /> },
+  { path: "/register", element: <RegisterScreen /> },
 
   // Private routes
   {
