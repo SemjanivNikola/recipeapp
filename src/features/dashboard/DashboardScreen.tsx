@@ -1,6 +1,5 @@
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
 import Searchbar from "@/components/searchbar/Searchbar";
-import { Link } from "react-router-dom";
 import RecipeList from "./RecipeList";
 import s from "./dashboard.module.css";
 
@@ -14,7 +13,6 @@ const DashboardScreen = () => {
       <ScreenHeader title="Dashboard" />
       <div className={s.content}>
         <Searchbar />
-        <Link to="recipe/123">Details</Link>
         <RecipeList list={recipeList} />
       </div>
     </>
