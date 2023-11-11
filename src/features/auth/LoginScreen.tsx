@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import FormController from "./FormController";
 import s from "./auth.module.css";
-import LoginForm from "./LoginForm";
+import { LoginForm } from "./LoginForm";
 
 const LoginScreen = () => {
   return (
