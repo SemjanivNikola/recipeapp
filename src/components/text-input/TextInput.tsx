@@ -2,13 +2,13 @@ import { useController } from "react-hook-form";
 import TextInputProps from "./TextInputProps";
 import s from "./text-input.module.css";
 
-const TextInput = ({ label, isFocused = false, error, type, ...controllerProps }: TextInputProps) => {
+const TextInput = ({ label, isFocused = false, error, type, autoComplete, ...controllerProps }: TextInputProps) => {
   const { field } = useController(controllerProps);
 
   return (
     <div className="relative mb-m text-start">
       <div className="relative">
-        <input autoFocus={isFocused} type={type} {...field} />
+        <input id={controllerProps.name} autoComplete={autoComplete} autoFocus={isFocused} type={type} {...field} />
         <label
           id={`${controllerProps.name}-label`}
           htmlFor={controllerProps.name}
