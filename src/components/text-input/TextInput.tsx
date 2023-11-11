@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from "react";
+import { forwardRef } from "react";
 import TextInputProps from "./TextInputProps";
 import s from "./text-input.module.css";
 
@@ -6,13 +6,10 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
   { label, isFocused = false, error, autoComplete, ...otherProps },
   ref
 ) {
-  const inputRef = ref ? (ref as unknown as HTMLInputElement) : null;
-  const input = useRef<HTMLInputElement>(inputRef);
-
   return (
     <div className="relative mb-m text-start">
       <div className="relative">
-        <input id={otherProps.name} ref={input} autoComplete={autoComplete} autoFocus={isFocused} {...otherProps} />
+        <input id={otherProps.name} ref={ref} autoComplete={autoComplete} autoFocus={isFocused} {...otherProps} />
         <label
           id={`${otherProps.name}-label`}
           htmlFor={otherProps.name}
