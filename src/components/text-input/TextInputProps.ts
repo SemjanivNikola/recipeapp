@@ -1,12 +1,16 @@
-import { InputHTMLAttributes } from "react";
-import { UseControllerProps } from "react-hook-form";
+import { ChangeEvent, InputHTMLAttributes } from "react";
 
 type TextInputProps = {
+  name: string;
+  type: InputHTMLAttributes<HTMLInputElement>["type"];
+  value: InputHTMLAttributes<HTMLInputElement>["value"];
+  autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  disabled?: boolean;
   isFocused?: boolean;
   error?: string;
   label: string;
-  type: InputHTMLAttributes<HTMLInputElement>["type"];
-  autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
-} & UseControllerProps<any>;
+  onBlur?: () => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
 
 export default TextInputProps;

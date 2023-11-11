@@ -1,24 +1,24 @@
 import TextInput from "@/components/text-input/TextInput";
-import { Control, FormState } from "react-hook-form";
+import { Control, Controller, FormState } from "react-hook-form";
 import { LoginForm } from "./AuthFormType";
 
 const LFormInputs = ({ control, errors }: { control: Control; errors: FormState<LoginForm>["errors"] }) => {
   return (
     <>
-      <TextInput
-        control={control}
+      <Controller
         name="email"
+        control={control}
         rules={{
           required: true,
         }}
-        type="email"
-        label="Email"
-        autoComplete="email"
-        error={errors?.email?.message}
+        render={({ field: props }) => (
+          <TextInput type="email" label="Email" autoComplete="email" error={errors?.email?.message} {...props} />
+        )}
       />
-      <TextInput
-        control={control}
+
+      <Controller
         name="password"
+        control={control}
         rules={{
           required: true,
           pattern: {
@@ -27,9 +27,9 @@ const LFormInputs = ({ control, errors }: { control: Control; errors: FormState<
             message: "Ne valja",
           },
         }}
-        type="password"
-        label="Password"
-        error={errors?.password?.message}
+        render={({ field: props }) => (
+          <TextInput type="password" label="Password" error={errors?.password?.message} {...props} />
+        )}
       />
     </>
   );
