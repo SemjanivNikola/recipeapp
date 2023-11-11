@@ -6,6 +6,7 @@ type TextInputProps = {
   error?: string;
   label: string;
   type: InputHTMLAttributes<HTMLInputElement>["type"];
+  autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
 } & UseControllerProps<any>;
 
 export default TextInputProps;
