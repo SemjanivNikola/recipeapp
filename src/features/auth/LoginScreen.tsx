@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import FormController from "./FormController";
 import s from "./auth.module.css";
 import LoginForm from "./LoginForm";
-import LFormInputs from "./LoginFormInputs";
 
 const LoginScreen = () => {
   return (
@@ -9,9 +9,9 @@ const LoginScreen = () => {
       <div className={s.formContainer}>
         <h1 className={s.formTitle}>Welcome back!</h1>
         <div style={{ width: "100%" }}>
-          <LoginForm>
-            <LFormInputs />
-          </LoginForm>
+          <FormController>
+            <LoginForm />
+          </FormController>
           <span className={s.divider}></span>
           <p className={s.text}>
             Don't have an account?
