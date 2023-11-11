@@ -1,21 +1,17 @@
-import { forwardRef, useRef } from "react";
+import { useController } from "react-hook-form";
 import TextInputProps from "./TextInputProps";
 import s from "./text-input.module.css";
 
-const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function TextInput(
-  { label, isFocused = false, error, ...otherProps },
-  ref
-) {
-  const inputRef = ref ? (ref as unknown as HTMLInputElement) : null;
-  const input = useRef<HTMLInputElement>(inputRef);
+const TextInput = ({ label, isFocused = false, error, type, ...controllerProps }: TextInputProps) => {
+  const { field } = useController(controllerProps);
 
   return (
     <div className="relative mb-m text-start">
       <div className="relative">
-        <input autoFocus={isFocused} ref={input} {...otherProps} />
+        <input autoFocus={isFocused} type={type} {...field} />
         <label
-          id={`${otherProps.name}-label`}
-          htmlFor={otherProps.name}
+          id={`${controllerProps.name}-label`}
+          htmlFor={controllerProps.name}
           className={`${s.inputLabel} absolute px-s`}
           style={{ transform: "translateY(-50%)" }}
         >
@@ -26,6 +22,6 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
       <p className={s.inputError}>{error}</p>
     </div>
   );
-});
+};
 
 export default TextInput;
