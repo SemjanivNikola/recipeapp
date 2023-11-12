@@ -1,13 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom";
 import AppEntry from "./AppEntry";
-
-// TODO:Authentication
-function isAuthenticated() {
-  return true;
-}
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const PrivateRouter = () => {
-  return isAuthenticated() ? (
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+
+  return isAuthenticated ? (
     <AppEntry>
       <Outlet />
     </AppEntry>
