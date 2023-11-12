@@ -8,7 +8,7 @@ const initialValues = {
   password: "",
 };
 
-const FormController = () => {
+const LoginForm = () => {
   const { handleSubmit, control, formState } = useForm<FormType>({
     defaultValues: initialValues,
     mode: "onBlur",
@@ -59,4 +59,4 @@ const FormController = () => {
   );
 };
 
-export default FormController;
+export default LoginForm;
