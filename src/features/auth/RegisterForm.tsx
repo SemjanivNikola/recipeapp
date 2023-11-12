@@ -63,7 +63,7 @@ const RegisterForm = () => {
           pattern: {
             value:
               /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[?!@#$%^&*()-_+=.,~[\]{};:'"|/><()])[A-Za-z\d?!@#$%^&*()-_+=.,~[\]{};:'"|/><()]{4,}$/,
-            message: "Ne valja",
+            message: "Try with at least 1 uppercase and 1 lowercase letter, 1 number and 1 special character",
           },
         }}
         render={({ field: props }) => (
