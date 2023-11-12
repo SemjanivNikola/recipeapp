@@ -10,7 +10,7 @@ export interface User {
 
 export const userApi = api.injectEndpoints({
   endpoints: (build) => ({
-    login: build.mutation<{ user: User }, { email: string; password: string }>({
+    login: build.mutation<{ message: string; appUser: User }, { email: string; password: string }>({
       query: (credentials) => ({
         url: env.LOGIN_URL,
         method: "POST",
