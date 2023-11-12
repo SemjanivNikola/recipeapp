@@ -70,9 +70,7 @@ const RegisterForm = () => {
           <TextInput type="password" label="Password" error={formState.errors?.password?.message} {...props} />
         )}
       />
-      <button type="submit" className={s.submitBtn}>
-        Sign In
-      </button>
+      <button className={s.submitBtn}>Cook with RecipeApp</button>
     </form>
   );
 };
