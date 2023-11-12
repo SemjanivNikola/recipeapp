@@ -15,7 +15,7 @@ const AuthLayout = ({ title, footerText, link, render }: AuthLayoutProps) => {
           {render}
           <span className={s.divider}></span>
           <p className={s.text}>
-            {footerText}
+            {footerText + " "}
             {link}
           </p>
         </div>
