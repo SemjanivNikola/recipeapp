@@ -42,11 +42,6 @@ const LoginForm = () => {
         control={control}
         rules={{
           required: true,
-          pattern: {
-            value:
-              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[?!@#$%^&*()-_+=.,~[\]{};:'"|/><()])[A-Za-z\d?!@#$%^&*()-_+=.,~[\]{};:'"|/><()]{4,}$/,
-            message: "Ne valja",
-          },
         }}
         render={({ field: props }) => (
           <TextInput type="password" label="Password" error={formState.errors?.password?.message} {...props} />
