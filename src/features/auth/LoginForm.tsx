@@ -1,40 +1,62 @@
 import TextInput from "@/components/text-input/TextInput";
-import { forwardRef } from "react";
-import { Controller } from "react-hook-form";
-import withFormController from "./withFormController";
-import { LoginFormProps } from "./AuthFormType";
+import { Controller, useForm } from "react-hook-form";
+import { LoginForm as FormType } from "./AuthFormType";
+import s from "./auth.module.css";
 
-export const LoginForm = withFormController<LoginFormProps>(
-  forwardRef<HTMLDivElement | null, LoginFormProps>(({ control, errors }, ref) => {
-    return (
-      <div ref={ref}>
-        <Controller
-          name="email"
-          control={control}
-          rules={{
-            required: true,
-          }}
-          render={({ field: props }) => (
-            <TextInput type="email" label="Email" autoComplete="email" error={errors?.email?.message} {...props} />
-          )}
-        />
+const initialValues = {
+  email: "",
+  password: "",
+};
 
-        <Controller
-          name="password"
-          control={control}
-          rules={{
-            required: true,
-            pattern: {
-              value:
-                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[?!@#$%^&*()-_+=.,~[\]{};:'"|/><()])[A-Za-z\d?!@#$%^&*()-_+=.,~[\]{};:'"|/><()]{4,}$/,
-              message: "Ne valja",
-            },
-          }}
-          render={({ field: props }) => (
-            <TextInput type="password" label="Password" error={errors?.password?.message} {...props} />
-          )}
-        />
-      </div>
-    );
-  })
-);
+const FormController = () => {
+  const { handleSubmit, control, formState } = useForm<FormType>({
+    defaultValues: initialValues,
+    mode: "onBlur",
+  });
+
+  const onSubmit = (data: FormType) => {
+    alert(JSON.stringify(data));
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className={s.authForm}>
+      <Controller
+        name="email"
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: props }) => (
+          <TextInput
+            type="email"
+            label="Email"
+            autoComplete="email"
+            error={formState.errors?.email?.message}
+            {...props}
+          />
+        )}
+      />
+
+      <Controller
+        name="password"
+        control={control}
+        rules={{
+          required: true,
+          pattern: {
+            value:
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[?!@#$%^&*()-_+=.,~[\]{};:'"|/><()])[A-Za-z\d?!@#$%^&*()-_+=.,~[\]{};:'"|/><()]{4,}$/,
+            message: "Ne valja",
+          },
+        }}
+        render={({ field: props }) => (
+          <TextInput type="password" label="Password" error={formState.errors?.password?.message} {...props} />
+        )}
+      />
+      <button type="submit" className={s.submitBtn}>
+        Sign In
+      </button>
+    </form>
+  );
+};
+
+export default FormController;
