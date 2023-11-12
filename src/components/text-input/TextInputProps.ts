@@ -1,16 +1,16 @@
-import { InputHTMLAttributes } from "react";
+import { ChangeEvent, InputHTMLAttributes } from "react";
 
 type TextInputProps = {
-  type: InputHTMLAttributes<HTMLInputElement>["type"];
   name: string;
+  type: InputHTMLAttributes<HTMLInputElement>["type"];
+  value: InputHTMLAttributes<HTMLInputElement>["value"];
   autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  disabled?: boolean;
   isFocused?: boolean;
-  value?: InputHTMLAttributes<HTMLInputElement>["value"];
   error?: string;
   label: string;
-  readOnly?: InputHTMLAttributes<HTMLInputElement>["readOnly"];
-  required?: InputHTMLAttributes<HTMLInputElement>["required"];
-  onChange: (e: any) => void;
+  onBlur?: () => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default TextInputProps;
