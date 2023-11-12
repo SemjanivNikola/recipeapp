@@ -1,16 +1,21 @@
 import { ChangeEvent, InputHTMLAttributes } from "react";
+import s from "./checkbox.module.css";
 
-const Checkbox = (props: {
+const Checkbox = ({
+  value,
+  text,
+  ...props
+}: {
   name: InputHTMLAttributes<HTMLInputElement>["name"];
-  value: string; // InputHTMLAttributes<HTMLInputElement>["checked"]
+  value: InputHTMLAttributes<HTMLInputElement>["checked"];
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  text: string;
 }) => {
   return (
-    <input
-      type="checkbox"
-      className="rounded border-gray-300 shadow-sm focus:ring-indigo-500 appearance-none cursor-pointer"
-      {...props}
-    />
+    <div>
+      <input type="checkbox" value={value as unknown as string} className={s.checkbox} {...props} />
+      <p>{text}</p>
+    </div>
   );
 };
 
