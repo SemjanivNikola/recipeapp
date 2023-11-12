@@ -4,23 +4,30 @@ import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { LoginForm as FormType } from "./AuthFormType";
 import s from "./auth.module.css";
+import { useDispatch } from "react-redux";
+import { rememberMe } from "./slices/authSlice";
 
 const initialValues = {
   email: "",
   password: "",
+  rememberMe: false,
 };
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [login] = useLoginMutation();
+  const dispatch = useDispatch();
   const { handleSubmit, control, formState, setError } = useForm<FormType>({
     defaultValues: initialValues,
     mode: "onBlur",
   });
 
   const onSubmit = async (data: FormType) => {
-    await login(data)
-      .then(() => navigate("/"))
+    await login({ email: data.email, password: data.password })
+      .then(() => {
+        dispatch(rememberMe());
+        return navigate("/");
+      })
       .catch((err: string) => {
         setError("root", { message: err }, { shouldFocus: true });
       });

@@ -6,16 +6,28 @@ interface AuthSlice {
   isAuthenticated: boolean;
 }
 
-const initialState: AuthSlice = {
-  user: null,
-  isAuthenticated: false,
-};
+function getInitialState() {
+  const authStorage = localStorage.getItem("auth");
+  const auth: AuthSlice | null = authStorage ? JSON.parse(authStorage) : null;
+  return (
+    auth ?? {
+      user: null,
+      isAuthenticated: false,
+    }
+  );
+}
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: initialState,
+  initialState: getInitialState(),
   reducers: {
-    logout: () => initialState,
+    logout: () => {
+      localStorage.clear();
+      return { user: null, isAuthenticated: false };
+    },
+    rememberMe: (state) => {
+      localStorage.setItem("auth", JSON.stringify(state));
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -29,6 +41,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, rememberMe } = authSlice.actions;
 // Expose auth type to main store
 export default authSlice.reducer;
