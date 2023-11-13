@@ -44,8 +44,7 @@ input.textInput:focus ~ .focusIndicator {
 
 .inputError {
     height: 1rem;
-    padding-top: .5rem;
-    font-size: .25rem;
+    font-size: .75rem;
     font-weight: 500;
     color: rgb(239 68 68);
 }
