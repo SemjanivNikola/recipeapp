@@ -67,7 +67,7 @@ const LoginForm = () => {
       <Controller
         name="rememberMe"
         control={control}
-        render={({ field }) => <Checkbox {...field} text="Remember me" />}
+        render={({ field }) => <Checkbox {...field} label="Remember me" />}
       />
 
       <button type="submit" className={s.submitBtn}>
