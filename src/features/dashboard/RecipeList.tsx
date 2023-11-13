@@ -3,11 +3,15 @@ import { useNavigate } from "react-router-dom";
 import s from "./dashboard.module.css";
 
 interface RecipeListProps {
-  list: Recipe[];
+  list?: Recipe[];
 }
 
 const RecipeList = ({ list }: RecipeListProps) => {
   const navigate = useNavigate();
+
+  if (!list) {
+    return <div>Error loading albums.</div>;
+  }
 
   function onClick(id: string) {
     navigate("/recipe/" + id);
