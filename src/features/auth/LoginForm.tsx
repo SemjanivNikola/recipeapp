@@ -26,7 +26,7 @@ const LoginForm = () => {
   const onSubmit = async (data: FormType) => {
     await login({ email: data.email, password: data.password })
       .then(() => {
-        dispatch(rememberMe());
+        if (data.rememberMe) dispatch(rememberMe());
         return navigate("/");
       })
       .catch((err: string) => {
@@ -67,7 +67,7 @@ const LoginForm = () => {
       <Controller
         name="rememberMe"
         control={control}
-        render={({ field }) => <Checkbox {...field} text="Remember me" />}
+        render={({ field }) => <Checkbox {...field} label="Remember me" />}
       />
 
       <button type="submit" className={s.submitBtn}>
