@@ -17,15 +17,16 @@ export const userApi = api.injectEndpoints({
         body: credentials,
       }),
     }),
-    register: build.mutation<{ message: string; appUserId: string }, { name: string; email: string; password: string }>(
-      {
-        query: (body) => ({
-          url: env.REGISTER_URL,
-          method: "POST",
-          body,
-        }),
-      }
-    ),
+    register: build.mutation<
+      { message: string; appUserId: string },
+      { fullName: string; email: string; password: string }
+    >({
+      query: (body) => ({
+        url: env.REGISTER_URL,
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
