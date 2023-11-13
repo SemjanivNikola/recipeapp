@@ -17,6 +17,8 @@ export const recipeApi = api.injectEndpoints({
         url: env.GET_ALL_RECIPES_URL,
         method: "GET",
       }),
+      providesTags: () => [{ type: "Recipe", id: "LIST" }],
+      transformResponse: (response: { recipes: Recipe[] }) => response.recipes,
     }),
     fetchById: build.query<Recipe, string>({
       query: (recipeId) => ({
@@ -24,6 +26,7 @@ export const recipeApi = api.injectEndpoints({
         params: { recipeId },
         method: "GET",
       }),
+      providesTags: (result) => [{ type: "Recipe", id: result?.id }],
     }),
     createRecipe: build.mutation<{ message: string; recipeId: string }, { recipe: Omit<Recipe, "id"> }>({
       query: (body) => ({
@@ -31,6 +34,7 @@ export const recipeApi = api.injectEndpoints({
         method: "POST",
         body,
       }),
+      invalidatesTags: [{ type: "Recipe", id: "LIST" }],
     }),
     updateRecipe: build.mutation<{ message: string }, { recipeId: string; recipe: Omit<Recipe, "id"> }>({
       query: (body) => ({
@@ -38,6 +42,7 @@ export const recipeApi = api.injectEndpoints({
         method: "PATCH",
         body,
       }),
+      invalidatesTags: (_r, _e, arg) => [{ type: "Recipe", id: arg.recipeId }],
     }),
     deleteRecipe: build.mutation<{ message: string }, string>({
       query: (recipeId) => ({
@@ -47,6 +52,7 @@ export const recipeApi = api.injectEndpoints({
         },
         method: "DELETE",
       }),
+      invalidatesTags: [{ type: "Recipe", id: "LIST" }],
     }),
   }),
 });
