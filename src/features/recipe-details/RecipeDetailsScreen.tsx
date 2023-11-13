@@ -1,6 +1,7 @@
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
 import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
+import ActionBar from "./ActionBar";
 import s from "./recipe-details-screen.module.css";
 
 const RecipeDetailsScreen = () => {
@@ -19,10 +20,7 @@ const RecipeDetailsScreen = () => {
     <>
       <ScreenHeader title={data.title} />
       <div className={s.content}>
-        <div className={s.actionBar}>
-          <button className={s.btnTransparent}>Edit</button>
-          <button className={s.btnDanger}>Delete</button>
-        </div>
+        <ActionBar recipeId={recipeId as string} />
         <div className={s.card}>
           <p>
             <span className={s.pTitle}>Author: </span>
