@@ -48,6 +48,7 @@ const LoginForm = () => {
             type="email"
             label="Email"
             autoComplete="email"
+            isFocused
             error={formState.errors?.email?.message}
             {...props}
           />

@@ -41,6 +41,7 @@ const RegisterForm = () => {
             type="text"
             label="Full Name"
             autoComplete="false"
+            isFocused
             error={formState.errors?.email?.message}
             {...props}
           />
