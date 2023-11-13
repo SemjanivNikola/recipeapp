@@ -3,19 +3,19 @@ import s from "./checkbox.module.css";
 
 const Checkbox = ({
   value,
-  text,
+  label,
   ...props
 }: {
   name: InputHTMLAttributes<HTMLInputElement>["name"];
   value: InputHTMLAttributes<HTMLInputElement>["checked"];
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  text: string;
+  label: string;
 }) => {
   return (
-    <div>
+    <label htmlFor={props.name} className={s.checkboxWrapper}>
       <input type="checkbox" value={value as unknown as string} className={s.checkbox} {...props} />
-      <p>{text}</p>
-    </div>
+      {label}
+    </label>
   );
 };
 
