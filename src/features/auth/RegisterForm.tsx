@@ -1,5 +1,7 @@
 import TextInput from "@/components/text-input/TextInput";
+import { useRegisterMutation } from "@/store/services/userApi";
 import { Controller, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { RegisterForm as FormType } from "./AuthFormType";
 import s from "./auth.module.css";
 
@@ -10,13 +12,19 @@ const initialValues = {
 };
 
 const RegisterForm = () => {
-  const { handleSubmit, control, formState } = useForm<FormType>({
+  const [register] = useRegisterMutation();
+  const navigate = useNavigate();
+  const { handleSubmit, control, formState, setError } = useForm<FormType>({
     defaultValues: initialValues,
     mode: "onBlur",
   });
 
-  const onSubmit = (data: FormType) => {
-    alert(JSON.stringify(data));
+  const onSubmit = async (data: FormType) => {
+    await register(data)
+      .then(() => navigate("/login"))
+      .catch((err: string) => {
+        setError("root", { message: err }, { shouldFocus: true });
+      });
   };
 
   return (

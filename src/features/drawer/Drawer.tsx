@@ -1,6 +1,10 @@
 import Icon from "@/components/icons/Icon";
+import { useDispatch } from "react-redux";
+import { logout } from "../auth/slices/authSlice";
 
 const Drawer = () => {
+  const dispatch = useDispatch();
+
   return (
     <div id="drawer">
       <div style={{ height: "8rem" }}>Logo</div>
@@ -16,7 +20,7 @@ const Drawer = () => {
         <Icon name="layers-plus" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>CREATE RECIPE</span>
       </a>
-      <button className="drawer-btn">
+      <button className="drawer-btn" onClick={() => dispatch(logout())}>
         <Icon name="signout" />
         <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>SIGN OUT</span>
       </button>
