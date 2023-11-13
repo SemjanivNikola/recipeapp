@@ -26,12 +26,13 @@ const LoginForm = () => {
 
   const onSubmit = async (data: FormType) => {
     await login({ email: data.email, password: data.password })
+      .unwrap()
       .then(() => {
         if (data.rememberMe) dispatch(rememberMe());
         return navigate("/");
       })
-      .catch((err: string) => {
-        setError("root", { message: err }, { shouldFocus: true });
+      .catch((err: { data: { message: string } }) => {
+        setError("password", { message: err.data.message });
       });
   };
 

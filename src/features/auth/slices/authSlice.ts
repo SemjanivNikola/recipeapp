@@ -30,14 +30,10 @@ const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder
-      .addMatcher(userApi.endpoints.login.matchFulfilled, (state, action) => {
-        state.user = action.payload.appUser;
-        state.isAuthenticated = true;
-      })
-      .addMatcher(userApi.endpoints.login.matchRejected, (_, action) => {
-        console.log("rejected", action);
-      });
+    builder.addMatcher(userApi.endpoints.login.matchFulfilled, (state, action) => {
+      state.user = action.payload.appUser;
+      state.isAuthenticated = true;
+    });
   },
 });
 
