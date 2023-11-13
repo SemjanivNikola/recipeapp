@@ -1,4 +1,4 @@
-input {
+input.textInput {
     width: 100%;
     height: 32px;
     outline: none;
@@ -22,17 +22,17 @@ input {
     transition: width 150ms ease-in-out;
 }
 
-input:focus + .inputLabel,
-input:not([value=""]) + .inputLabel {
+input.textInput:focus + .inputLabel,
+input.textInput:not([value=""]) + .inputLabel {
     top: 0;
     font-size: .875rem;
 }
 
-input:focus + .inputLabel {
+input.textInput:focus + .inputLabel {
     color: #71bc68;
 }
 
-input:focus ~ .focusIndicator {
+input.textInput:focus ~ .focusIndicator {
     width: 100%;
 }
 
@@ -44,8 +44,7 @@ input:focus ~ .focusIndicator {
 
 .inputError {
     height: 1rem;
-    padding-top: .5rem;
-    font-size: .25rem;
+    font-size: .75rem;
     font-weight: 500;
     color: rgb(239 68 68);
 }

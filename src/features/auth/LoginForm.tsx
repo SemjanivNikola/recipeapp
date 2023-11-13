@@ -1,4 +1,5 @@
 import Checkbox from "@/components/checkbox/Checkbox";
+import ButtonSpinner from "@/components/spinner/ButttonSpinner";
 import TextInput from "@/components/text-input/TextInput";
 import { useLoginMutation } from "@/store/services/userApi";
 import { Controller, useForm } from "react-hook-form";
@@ -16,7 +17,7 @@ const initialValues = {
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const [login] = useLoginMutation();
+  const [login, status] = useLoginMutation();
   const dispatch = useDispatch();
   const { handleSubmit, control, formState, setError } = useForm<FormType>({
     defaultValues: initialValues,
@@ -27,7 +28,7 @@ const LoginForm = () => {
     await login({ email: data.email, password: data.password })
       .unwrap()
       .then(() => {
-        dispatch(rememberMe());
+        if (data.rememberMe) dispatch(rememberMe());
         return navigate("/");
       })
       .catch((err: { data: { message: string } }) => {
@@ -48,6 +49,7 @@ const LoginForm = () => {
             type="email"
             label="Email"
             autoComplete="email"
+            isFocused
             error={formState.errors?.email?.message}
             {...props}
           />
@@ -68,12 +70,16 @@ const LoginForm = () => {
       <Controller
         name="rememberMe"
         control={control}
-        render={({ field }) => <Checkbox {...field} text="Remember me" />}
+        render={({ field }) => <Checkbox {...field} label="Remember me" />}
       />
 
-      <button type="submit" className={s.submitBtn}>
-        Sign In
-      </button>
+      {status.isLoading ? (
+        <ButtonSpinner />
+      ) : (
+        <button type="submit" className={s.submitBtn}>
+          Sign In
+        </button>
+      )}
     </form>
   );
 };
