@@ -4,6 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { RegisterForm as FormType } from "./AuthFormType";
 import s from "./auth.module.css";
+import ButtonSpinner from "@/components/spinner/ButttonSpinner";
 
 const initialValues = {
   fullName: "",
@@ -12,7 +13,7 @@ const initialValues = {
 };
 
 const RegisterForm = () => {
-  const [register] = useRegisterMutation();
+  const [register, status] = useRegisterMutation();
   const navigate = useNavigate();
   const { handleSubmit, control, formState, setError } = useForm<FormType>({
     defaultValues: initialValues,
@@ -78,7 +79,14 @@ const RegisterForm = () => {
           <TextInput type="password" label="Password" error={formState.errors?.password?.message} {...props} />
         )}
       />
-      <button className={s.submitBtn}>Cook with RecipeApp</button>
+
+      {status.isLoading ? (
+        <ButtonSpinner />
+      ) : (
+        <button type="submit" className={s.submitBtn}>
+          Sign In
+        </button>
+      )}
     </form>
   );
 };
