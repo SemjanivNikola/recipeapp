@@ -19,6 +19,10 @@ const RecipeDetailsScreen = () => {
     <>
       <ScreenHeader title={data.title} />
       <div className={s.content}>
+        <div className={s.actionBar}>
+          <button className={s.btnTransparent}>Edit</button>
+          <button className={s.btnDanger}>Delete</button>
+        </div>
         <div className={s.card}>
           <p>
             <span className={s.pTitle}>Author: </span>
