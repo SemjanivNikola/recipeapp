@@ -26,6 +26,7 @@ export const recipeApi = api.injectEndpoints({
         params: { recipeId },
         method: "GET",
       }),
+      transformResponse: (response: { recipe: Recipe }) => response.recipe,
       providesTags: (result) => [{ type: "Recipe", id: result?.id }],
     }),
     createRecipe: build.mutation<{ message: string; recipeId: string }, { recipe: Omit<Recipe, "id"> }>({
