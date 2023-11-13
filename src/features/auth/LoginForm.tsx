@@ -26,7 +26,7 @@ const LoginForm = () => {
   const onSubmit = async (data: FormType) => {
     await login({ email: data.email, password: data.password })
       .then(() => {
-        dispatch(rememberMe());
+        if (data.rememberMe) dispatch(rememberMe());
         return navigate("/");
       })
       .catch((err: string) => {
