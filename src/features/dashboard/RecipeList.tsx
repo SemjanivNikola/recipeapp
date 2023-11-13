@@ -1,12 +1,22 @@
 import { Recipe } from "@/store/services/recipeApi";
-import { memo } from "react";
+import { useNavigate } from "react-router-dom";
 import s from "./dashboard.module.css";
 
 interface RecipeListProps {
-  list: Recipe[];
+  list?: Recipe[];
 }
 
 const RecipeList = ({ list }: RecipeListProps) => {
+  const navigate = useNavigate();
+
+  if (!list) {
+    return <div>Error loading albums.</div>;
+  }
+
+  function onClick(id: string) {
+    navigate("/recipe/" + id);
+  }
+
   return (
     <table className={s.tableList}>
       <thead>
@@ -18,19 +28,19 @@ const RecipeList = ({ list }: RecipeListProps) => {
       </thead>
       <tbody>
         {list.map((item, index) => (
-          <RecipeListItem key={item.id} item={item} index={index} />
+          <RecipeListItem key={item.id} item={item} index={index} onClick={onClick} />
         ))}
       </tbody>
     </table>
   );
 };
 
-const RecipeListItem = memo(({ item, index }: { item: Recipe; index: number }) => (
-  <tr>
+const RecipeListItem = ({ item, index, onClick }: { item: Recipe; index: number; onClick: (id: string) => void }) => (
+  <tr onClick={() => onClick(item.id)}>
     <td>{index}</td>
     <td>{item.title}</td>
     <td>{item.dateCreated}</td>
   </tr>
-));
+);
 
 export default RecipeList;

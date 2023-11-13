@@ -7,7 +7,7 @@ import s from "./dashboard.module.css";
 const DashboardScreen = () => {
   const { data, error, isFetching } = useFetchAllQuery(null);
 
-  if (error || !data) {
+  if (error) {
     return <div>Error loading albums.</div>;
   }
 
