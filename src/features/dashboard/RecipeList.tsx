@@ -1,12 +1,9 @@
+import { Recipe } from "@/store/services/recipeApi";
+import { memo } from "react";
 import s from "./dashboard.module.css";
 
 interface RecipeListProps {
-  list: {
-    id: string;
-    title: string;
-    dateCreated: string;
-    tags: string[];
-  }[];
+  list: Recipe[];
 }
 
 const RecipeList = ({ list }: RecipeListProps) => {
@@ -20,18 +17,20 @@ const RecipeList = ({ list }: RecipeListProps) => {
         </tr>
       </thead>
       <tbody>
-        {list.map((item, index) => {
-          return (
-            <tr key={item.id}>
-              <td>{index}</td>
-              <td>{item.title}</td>
-              <td>{item.dateCreated}</td>
-            </tr>
-          );
-        })}
+        {list.map((item, index) => (
+          <RecipeListItem key={item.id} item={item} index={index} />
+        ))}
       </tbody>
     </table>
   );
 };
+
+const RecipeListItem = memo(({ item, index }: { item: Recipe; index: number }) => (
+  <tr>
+    <td>{index}</td>
+    <td>{item.title}</td>
+    <td>{item.dateCreated}</td>
+  </tr>
+));
 
 export default RecipeList;
