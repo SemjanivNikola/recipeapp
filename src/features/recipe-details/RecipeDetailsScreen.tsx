@@ -1,6 +1,7 @@
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
 import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
+import s from "./recipe-details-screen.module.css";
 
 const RecipeDetailsScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
@@ -17,7 +18,31 @@ const RecipeDetailsScreen = () => {
   return (
     <>
       <ScreenHeader title={data.title} />
-      <h1>RecipeDetailsScreen</h1>
+      <div className={s.content}>
+        <div className={s.card}>
+          <p>
+            <span className={s.pTitle}>Author: </span>
+            {data.authorId}
+          </p>
+          <p>
+            <span className={s.pTitle}>Created: </span>
+            {data.dateCreated}
+          </p>
+        </div>
+        <div className={s.pillWrapper}>
+          {data.tags.map((tag) => (
+            <div className={s.pillTag}>{tag}</div>
+          ))}
+        </div>
+        <p>
+          <span className={s.pTitle}>Instructions: </span>
+        </p>
+        <ol className={s.instructionList}>
+          {data.instructions.map((instruction) => (
+            <li>{instruction}</li>
+          ))}
+        </ol>
+      </div>
     </>
   );
 };
