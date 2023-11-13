@@ -9,7 +9,14 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
   return (
     <div className="relative mb-m text-start">
       <div className="relative">
-        <input id={otherProps.name} ref={ref} autoComplete={autoComplete} autoFocus={isFocused} {...otherProps} />
+        <input
+          id={otherProps.name}
+          ref={ref}
+          autoComplete={autoComplete}
+          autoFocus={isFocused}
+          className={s.textInput}
+          {...otherProps}
+        />
         <label
           id={`${otherProps.name}-label`}
           htmlFor={otherProps.name}
