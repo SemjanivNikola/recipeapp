@@ -17,8 +17,9 @@ export const recipeApi = api.injectEndpoints({
         url: env.GET_ALL_RECIPES_URL,
         method: "GET",
       }),
-      providesTags: () => [{ type: "Recipe", id: "LIST" }],
       transformResponse: (response: { recipes: Recipe[] }) => response.recipes,
+      transformErrorResponse: (response: { status: number; data: { message: string } }) => response.data.message,
+      providesTags: () => [{ type: "Recipe", id: "LIST" }],
     }),
     fetchById: build.query<Recipe, string>({
       query: (recipeId) => ({
@@ -27,6 +28,7 @@ export const recipeApi = api.injectEndpoints({
         method: "GET",
       }),
       transformResponse: (response: { recipe: Recipe }) => response.recipe,
+      transformErrorResponse: (response: { status: number; data: { message: string } }) => response.data.message,
       providesTags: (result) => [{ type: "Recipe", id: result?.id }],
     }),
     createRecipe: build.mutation<{ message: string; recipeId: string }, { recipe: Omit<Recipe, "id"> }>({
