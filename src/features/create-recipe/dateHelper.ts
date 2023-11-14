@@ -3,7 +3,7 @@ const LOCAL_DATE_STRING = "hr-HR";
  * Store format: YYYY-MM-DD
  */
 export function formatDateForStore(date: Date) {
-  return date.getFullYear() + "-" + date.getMonth() + "-" + date.getDay();
+  return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
 }
 
 /**
