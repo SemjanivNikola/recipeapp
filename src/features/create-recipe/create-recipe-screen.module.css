@@ -85,8 +85,6 @@
     height: 2rem;
     padding: 5px 5.25px;
     border-radius: 50%;
-    background-color: #71bc68;
-    border: 1px solid #71bc68;
     transition: background-color 150ms ease-in-out;
 }
 
