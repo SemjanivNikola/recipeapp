@@ -34,7 +34,7 @@ const ListInput = ({ list, update }: { list: string[]; update: (list: string[]) 
         {list.map((item, index) => (
           <li key={index} onClick={() => deleteItem(index)}>
             {item}
-            <Icon name="trash-cna-outline" size={18} color="#fff" />
+            <Icon name="trash-can-outline" size={18} color="#fff" />
           </li>
         ))}
       </ul>

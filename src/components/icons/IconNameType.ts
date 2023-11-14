@@ -8,6 +8,6 @@ type IconName =
   | "magnify"
   | "plus"
   | "signout"
-  | "trash-cna-outline";
+  | "trash-can-outline";
 
 export default IconName;
