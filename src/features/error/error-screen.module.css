@@ -1,4 +1,4 @@
-#errorScreen {
+.errorContainer {
     position: relative;
     height: inherit;
     display: flex;
