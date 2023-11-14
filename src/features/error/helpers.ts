@@ -1,5 +1,9 @@
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 
+export function isClientBaseError(error: object): error is { error: string } {
+  return "error" in error && typeof error.error === "string";
+}
+
 /**
  * Type predicate to narrow an unknown error to `FetchBaseQueryError`
  */
