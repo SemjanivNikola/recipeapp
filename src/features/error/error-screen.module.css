@@ -4,10 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url( '../../assets/auth_screen_bg.svg' );
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #646cff15;
 }
 
 .contentContainer {
