@@ -45,7 +45,16 @@ const CreateRecipeScreen = () => {
         tags: data.tags,
       },
     };
-    await createRecipe(formData);
+    await createRecipe(formData)
+      .unwrap()
+      .then((response) => {
+        // response.data.message
+        console.log("response >> ", response);
+        methods.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const tags = methods.getValues("tags");
@@ -94,7 +103,8 @@ const CreateRecipeScreen = () => {
                   Create
                 </button>
               )}
-              {status.isLoading ? <ButtonSpinner /> : <button className={s.transparentBtn}>Delete</button>}
+              {/* TODO: Uncomment when doing edit feature */}
+              {/* {status.isLoading ? <ButtonSpinner /> : <button className={s.transparentBtn}>Delete</button>} */}
             </div>
           </form>
         </FormProvider>
