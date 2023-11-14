@@ -3,15 +3,16 @@ import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
 import ActionBar from "./ActionBar";
 import s from "./recipe-details-screen.module.css";
+import ErrorScreen from "../error/ErrorScreen";
 
 const RecipeDetailsScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
-  const { data, error, isFetching } = useFetchByIdQuery(recipeId as string);
+  const { data, error, isFetching } = useFetchByIdQuery("testerror");
 
-  if (error) {
-    return <div>Error while loading.</div>;
-  } else if (isFetching) {
+  if (isFetching) {
     return <h1>Loading</h1>;
+  } else if (error) {
+    return <ErrorScreen error={error} />;
   } else if (!data) {
     return <div>Error while loading.</div>;
   }

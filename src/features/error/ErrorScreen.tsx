@@ -1,6 +1,15 @@
+import { SerializedError } from "@reduxjs/toolkit";
 import s from "./error-screen.module.css";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+import { isFetchBaseQueryError } from "./helpers";
 
-const ErrorScreen = ({ message }: { message: string }) => {
+interface QueryErrorHelper {
+  message: string;
+}
+
+const ErrorScreen = ({ error }: { error: SerializedError | FetchBaseQueryError }) => {
+  const message = isFetchBaseQueryError(error) ? (error.data as QueryErrorHelper).message : error.message;
+
   function onClick() {
     history.back();
   }
