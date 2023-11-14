@@ -1,4 +1,5 @@
 import { User, userApi } from "@/store/services/userApi";
+import { RootState } from "@/store/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface AuthSlice {
@@ -36,6 +37,8 @@ const authSlice = createSlice({
     });
   },
 });
+
+export const selectUser = (state: RootState) => state.auth.user;
 
 export const { logout, rememberMe } = authSlice.actions;
 // Expose auth type to main store
