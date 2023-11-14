@@ -17,7 +17,7 @@ function extractErrorMesage(data?: object) {
 /**
  * @param *error* is used to handle expected or unexpected exceptions
  */
-const ErrorScreen = ({ error }: { error?: object }) => {
+const ErrorView = ({ error }: { error?: object }) => {
   const message = extractErrorMesage(error);
 
   function onClick() {
@@ -25,7 +25,7 @@ const ErrorScreen = ({ error }: { error?: object }) => {
   }
 
   return (
-    <div id={s.errorScreen}>
+    <div className={s.errorContainer}>
       <div className={s.contentContainer}>
         <h1>Whoops!</h1>
         <p>{message}</p>
@@ -35,4 +35,4 @@ const ErrorScreen = ({ error }: { error?: object }) => {
   );
 };
 
-export default ErrorScreen;
+export default ErrorView;

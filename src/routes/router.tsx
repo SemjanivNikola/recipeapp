@@ -5,9 +5,9 @@ import MyRecipesScreen from "@/features/my-recipes/MyRecipesScreen";
 import RecipeDetailsScreen from "@/features/recipe-details/RecipeDetailsScreen";
 import { createBrowserRouter } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
+import NoMatch404 from "@/features/error/404";
 
 const Router = createBrowserRouter([
-  // TODO: Auth - Public routes
   { path: "/login", element: <LoginScreen /> },
   { path: "/register", element: <RegisterScreen /> },
 
@@ -28,6 +28,7 @@ const Router = createBrowserRouter([
       { path: "/recipe/:recipeId", element: <RecipeDetailsScreen /> },
     ],
   },
+  { path: "*", element: <NoMatch404 /> },
 ]);
 
 export default Router;
