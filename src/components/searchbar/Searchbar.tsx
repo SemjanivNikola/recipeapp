@@ -8,7 +8,7 @@ const Searchbar = () => {
   const [search, setSearch] = useState("");
 
   const onClick = useCallback(() => {
-    navigate("create-recipe");
+    navigate("/create-recipe");
   }, []);
 
   return (
