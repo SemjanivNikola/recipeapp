@@ -7,14 +7,12 @@ import ErrorScreen from "../error/ErrorScreen";
 
 const RecipeDetailsScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
-  const { data, error, isFetching } = useFetchByIdQuery("testerror");
+  const { data, error, isFetching } = useFetchByIdQuery(recipeId as string);
 
   if (isFetching) {
     return <h1>Loading</h1>;
-  } else if (error) {
+  } else if (error || !data) {
     return <ErrorScreen error={error} />;
-  } else if (!data) {
-    return <div>Error while loading.</div>;
   }
 
   return (
