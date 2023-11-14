@@ -7,6 +7,7 @@ type IconName =
   | "layers"
   | "magnify"
   | "plus"
-  | "signout";
+  | "signout"
+  | "trash-cna-outline";
 
 export default IconName;
