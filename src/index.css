@@ -103,6 +103,10 @@ button:focus-visible {
   text-align: start;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 /**      OVERRIDDING DEFAULT BROWSER AUTOFILL BEHAIOUR        **/
 input:auto-fill {
   animation: onAutoFillStart ease 1ms;
