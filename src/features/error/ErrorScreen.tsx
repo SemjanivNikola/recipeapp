@@ -5,14 +5,19 @@ interface QueryErrorHelper {
   message: string;
 }
 
-function extractErrorMesage(data: object) {
-  if (isClientBaseError(data)) return data.error;
-  else if (isFetchBaseQueryError(data)) return (data.data as QueryErrorHelper).message;
+function extractErrorMesage(data?: object) {
+  if (data != null) {
+    if (isClientBaseError(data)) return data.error;
+    else if (isFetchBaseQueryError(data)) return (data.data as QueryErrorHelper).message;
+  }
 
-  return "Something else, wier happend :/";
+  return "Error while loading data";
 }
 
-const ErrorScreen = ({ error }: { error: object }) => {
+/**
+ * @param *error* is used to handle expected or unexpected exceptions
+ */
+const ErrorScreen = ({ error }: { error?: object }) => {
   const message = extractErrorMesage(error);
 
   function onClick() {
