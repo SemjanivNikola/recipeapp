@@ -4,6 +4,8 @@ import { useCreateRecipeMutation } from "@/store/services/recipeApi";
 import { Controller, useForm } from "react-hook-form";
 import s from "./create-recipe-screen.module.css";
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
+import { useSelector } from "react-redux";
+import { selectUser } from "../auth/slices/authSlice";
 
 type RecipeType = {
   title: string;
@@ -17,7 +19,6 @@ type RecipeType = {
 
 const initialValues = {
   title: "",
-  authorId: "",
   dateCreated: "",
   instructions: [],
   _instruction: "",
@@ -26,13 +27,13 @@ const initialValues = {
 };
 
 const CreateRecipeScreen = () => {
+  const user = useSelector(selectUser);
   const [createRecipe, status] = useCreateRecipeMutation();
   const { handleSubmit, control, formState } = useForm<RecipeType>({
-    defaultValues: initialValues,
+    defaultValues: { authorId: user?.id, ...initialValues },
     mode: "onBlur",
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (data: RecipeType) => {
     const formData = {
       recipe: {
@@ -54,8 +55,7 @@ const CreateRecipeScreen = () => {
           <div className={s.row}>
             <div className={s.w30}>
               {/* Author and date can not be modified */}
-              {/* TODO: Display author name, but save his id */}
-              <div>Author: Current user</div>
+              <div>Author: {user?.name}</div>
               {/* TODO: Display current date, but save in format YYYY-MM-DD*/}
               <div>Date: 2023-11-14</div>
             </div>
