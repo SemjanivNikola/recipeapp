@@ -6,11 +6,12 @@ import s from "./create-recipe-screen.module.css";
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
 import { useSelector } from "react-redux";
 import { selectUser } from "../auth/slices/authSlice";
+import { formatDateForDisplay, formatDateForStore } from "./dateHelper";
 
 type RecipeType = {
   title: string;
   authorId: string;
-  dateCreated: string;
+  dateCreated: Date;
   _instruction: string;
   _tag: string;
   instructions: string[];
@@ -19,18 +20,20 @@ type RecipeType = {
 
 const initialValues = {
   title: "",
-  dateCreated: "",
   instructions: [],
   _instruction: "",
   tags: [],
   _tag: "",
 };
 
+const DATE = new Date();
+const DATE_FOR_DISPLAY = formatDateForDisplay(DATE);
+
 const CreateRecipeScreen = () => {
   const user = useSelector(selectUser);
   const [createRecipe, status] = useCreateRecipeMutation();
   const { handleSubmit, control, formState } = useForm<RecipeType>({
-    defaultValues: { authorId: user?.id, ...initialValues },
+    defaultValues: { authorId: user?.id, dateCreated: DATE, ...initialValues },
     mode: "onBlur",
   });
 
@@ -39,7 +42,7 @@ const CreateRecipeScreen = () => {
       recipe: {
         title: data.title,
         authorId: data.authorId,
-        dateCreated: data.dateCreated,
+        dateCreated: formatDateForStore(DATE),
         instructions: data.instructions,
         tags: data.tags,
       },
@@ -56,8 +59,7 @@ const CreateRecipeScreen = () => {
             <div className={s.w30}>
               {/* Author and date can not be modified */}
               <div>Author: {user?.name}</div>
-              {/* TODO: Display current date, but save in format YYYY-MM-DD*/}
-              <div>Date: 2023-11-14</div>
+              <div>Date: {DATE_FOR_DISPLAY}</div>
             </div>
             <div className={s.w70}>
               <Controller
