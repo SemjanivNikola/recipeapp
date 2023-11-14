@@ -1,0 +1,23 @@
+#errorScreen {
+    position: relative;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #646cff15;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 480px;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
