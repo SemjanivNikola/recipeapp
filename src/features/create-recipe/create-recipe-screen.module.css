@@ -1,0 +1,40 @@
+.container {
+    padding: 1rem;
+    background-color: #ccc;
+}
+
+.form {
+    max-width: 65%;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #1c1c1e;
+    background-color: #fff;
+    -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.buttonRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w70 {
+    width: 70%;
+}
+
+.transparentBtn {
+    color: red;
+    background: transparent;
+}
