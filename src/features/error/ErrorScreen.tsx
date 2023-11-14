@@ -1,14 +1,19 @@
-import { SerializedError } from "@reduxjs/toolkit";
 import s from "./error-screen.module.css";
-import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { isFetchBaseQueryError } from "./helpers";
+import { isClientBaseError, isFetchBaseQueryError } from "./helpers";
 
 interface QueryErrorHelper {
   message: string;
 }
 
-const ErrorScreen = ({ error }: { error: SerializedError | FetchBaseQueryError }) => {
-  const message = isFetchBaseQueryError(error) ? (error.data as QueryErrorHelper).message : error.message;
+function extractErrorMesage(data: object) {
+  if (isClientBaseError(data)) return data.error;
+  else if (isFetchBaseQueryError(data)) return (data.data as QueryErrorHelper).message;
+
+  return "Something else, wier happend :/";
+}
+
+const ErrorScreen = ({ error }: { error: object }) => {
+  const message = extractErrorMesage(error);
 
   function onClick() {
     history.back();
