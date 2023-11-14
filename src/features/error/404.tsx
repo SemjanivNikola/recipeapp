@@ -1,11 +1,11 @@
 import s from "./error-screen.module.css";
-const _404ErrorScreen = () => {
+const NoMatch404 = () => {
   function onClick() {
     history.back();
   }
 
   return (
-    <div id={s.errorScreen}>
+    <div className={s.errorContainer}>
       <div className={s.contentContainer}>
         <h1>404</h1>
         <p>There is nothing here :/</p>
@@ -15,4 +15,4 @@ const _404ErrorScreen = () => {
   );
 };
 
-export default _404ErrorScreen;
+export default NoMatch404;
