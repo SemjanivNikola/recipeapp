@@ -1,11 +1,11 @@
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
+import Skeleton from "@/components/skeleton/Skeleton";
 import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
-import ActionBar from "./ActionBar";
-import s from "./recipe-details-screen.module.css";
 import ErrorView from "../../error/ErrorView";
 import { formatDateForDisplay } from "../helpers/dateHelper";
-import Skeleton from "@/components/skeleton/Skeleton";
+import ActionBar from "./ActionBar";
+import s from "./recipe-details-screen.module.css";
 
 const RecipeDetailsScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
@@ -22,10 +22,10 @@ const RecipeDetailsScreen = () => {
   return (
     <>
       <ScreenHeader title={data.title} />
-      <div className={s.content}>
+      <div className="p-lg">
         <ActionBar recipeId={recipeId as string} />
-        <div className={s.card}>
-          <p>
+        <div className={`${s.card} mb-m p-m`}>
+          <p className="mb-m">
             <span className={s.pTitle}>Author: </span>
             {data.authorId}
           </p>
@@ -34,14 +34,14 @@ const RecipeDetailsScreen = () => {
             {dateCreated}
           </p>
         </div>
-        <div className={s.pillWrapper}>
+        <div className="flex gap-m mb-m">
           {data.tags.map((tag, index) => (
             <div key={index} className={s.pillTag}>
               {tag}
             </div>
           ))}
         </div>
-        <p>
+        <p className="mb-m">
           <span className={s.pTitle}>Instructions: </span>
         </p>
         <ol className={s.instructionList}>
