@@ -22,6 +22,10 @@ th, td {
     padding: .5rem;
 }
 
+td {
+    border-bottom: 1px solid #ccc;
+}
+
 tr {
     cursor: pointer;
 }
