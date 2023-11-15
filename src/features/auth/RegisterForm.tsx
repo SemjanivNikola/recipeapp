@@ -1,4 +1,4 @@
-import ButtonLoader from "@/components/button/ButtonLoader";
+import Button from "@/components/button/Button";
 import TextInput from "@/components/text-input/TextInput";
 import { useRegisterMutation } from "@/store/services/userApi";
 import { Controller, useForm } from "react-hook-form";
@@ -82,7 +82,7 @@ const RegisterForm = () => {
       />
 
       <div className={s.growBtn}>
-        <ButtonLoader.Submit title="Sign Up" status={status.isLoading} />
+        <Button.Submit title="Sign Up" status={status.isLoading} />
       </div>
     </form>
   );

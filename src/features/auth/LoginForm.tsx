@@ -1,4 +1,4 @@
-import ButtonLoader from "@/components/button/ButtonLoader";
+import Button from "@/components/button/Button";
 import Checkbox from "@/components/checkbox/Checkbox";
 import TextInput from "@/components/text-input/TextInput";
 import { useLoginMutation } from "@/store/services/userApi";
@@ -74,7 +74,7 @@ const LoginForm = () => {
       />
 
       <div className={s.growBtn}>
-        <ButtonLoader.Submit title="Sign In" status={status.isLoading} />
+        <Button.Submit title="Sign In" status={status.isLoading} />
       </div>
     </form>
   );
