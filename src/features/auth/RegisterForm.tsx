@@ -1,10 +1,10 @@
+import ButtonLoader from "@/components/button/ButtonLoader";
 import TextInput from "@/components/text-input/TextInput";
 import { useRegisterMutation } from "@/store/services/userApi";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { RegisterForm as FormType } from "./AuthFormType";
 import s from "./auth.module.css";
-import ButtonSpinner from "@/components/spinner/ButttonSpinner";
 
 const initialValues = {
   fullName: "",
@@ -81,13 +81,9 @@ const RegisterForm = () => {
         )}
       />
 
-      {status.isLoading ? (
-        <ButtonSpinner />
-      ) : (
-        <button type="submit" className={s.submitBtn}>
-          Sign In
-        </button>
-      )}
+      <div className={s.growBtn}>
+        <ButtonLoader.Submit title="Sign Up" status={status.isLoading} />
+      </div>
     </form>
   );
 };

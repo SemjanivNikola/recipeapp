@@ -38,20 +38,12 @@
     width: 100%;
 }
 
-.submitBtn {
-    width: 100%;
-    background-color: rgb(78, 151, 69)   ;
-    color: #fff;
-    text-transform: capitalize;
-    transition: bakcground-color 150ms ease-in-out;
+.growBtn {
+    display: flex;
 }
 
-.submitBtn:hover {
-    background-color: rgb(63, 131, 54)
-}
-
-.submitBtn:focus {
-    outline: 1px solid rgb(63, 131, 54)
+.growBtn button {
+    flex-grow: 1;
 }
 
 .divider {

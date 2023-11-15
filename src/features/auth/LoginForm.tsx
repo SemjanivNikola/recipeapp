@@ -1,5 +1,5 @@
+import ButtonLoader from "@/components/button/ButtonLoader";
 import Checkbox from "@/components/checkbox/Checkbox";
-import ButtonSpinner from "@/components/spinner/ButttonSpinner";
 import TextInput from "@/components/text-input/TextInput";
 import { useLoginMutation } from "@/store/services/userApi";
 import { Controller, useForm } from "react-hook-form";
@@ -73,13 +73,9 @@ const LoginForm = () => {
         render={({ field }) => <Checkbox {...field} label="Remember me" />}
       />
 
-      {status.isLoading ? (
-        <ButtonSpinner />
-      ) : (
-        <button type="submit" className={s.submitBtn}>
-          Sign In
-        </button>
-      )}
+      <div className={s.growBtn}>
+        <ButtonLoader.Submit title="Sign In" status={status.isLoading} />
+      </div>
     </form>
   );
 };
