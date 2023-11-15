@@ -8,4 +8,12 @@ const ScreenHeader = ({ title }: { title: string }) => {
   );
 };
 
+const FormScreenHeader = ({ title }: { title: string }) => (
+  <div className={s.formHeader}>
+    <h1>{title}</h1>
+  </div>
+);
+
+ScreenHeader.Form = FormScreenHeader;
+
 export default ScreenHeader;
