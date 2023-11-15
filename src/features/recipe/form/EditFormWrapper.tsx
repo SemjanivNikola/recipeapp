@@ -1,4 +1,4 @@
-import ButtonLoader from "@/components/button/ButtonLoader";
+import Button from "@/components/button/Button";
 import Icon from "@/components/icons/Icon";
 import { Recipe, useDeleteRecipeMutation, useUpdateRecipeMutation } from "@/store/services/recipeApi";
 import { useSelector } from "react-redux";
@@ -72,7 +72,7 @@ const EditFormWrapper = ({ recipe }: { recipe: Recipe }) => {
       onAPISubmit={onSubmit}
       formActionButtons={
         <FormActionBar title="Update" status={updateStatus.isLoading}>
-          <ButtonLoader
+          <Button
             title="Delete"
             status={deleteStatus.isLoading}
             type="transparent-danger"

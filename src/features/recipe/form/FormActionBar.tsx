@@ -1,4 +1,4 @@
-import ButtonLoader from "@/components/button/ButtonLoader";
+import Button from "@/components/button/Button";
 
 const FormActionBar = ({
   status,
@@ -11,7 +11,7 @@ const FormActionBar = ({
 }) => {
   return (
     <div className="flex align-center justify-between" style={{ paddingTop: "var(--2xl)" }}>
-      <ButtonLoader.Submit title={title} status={status} />
+      <Button.Submit title={title} status={status} />
       {children}
     </div>
   );
