@@ -43,7 +43,7 @@ const recipeSlice = createSlice({
   },
 });
 
-export const selectRecipeIds = (state: RootState) => state.recipeSlice.recipeIds;
+export const selectRecipeIds = (state: RootState) => state.recipe.recipeIds;
 
 // Expose auth type to main store
 export default recipeSlice.reducer;
