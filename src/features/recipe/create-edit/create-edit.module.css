@@ -2,7 +2,7 @@
     max-width: 65%;
     margin: var(--lg) auto;
     padding: var(--m);
-    border-radius: (--border-radius);
+    border-radius: var(--border-radius);
     background-color: var(--white);
     -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
@@ -108,8 +108,18 @@
     font-size: .85rem;
     color: var(--white);
     background-color: var(--primary);
+    word-wrap: break-word;
+    word-break: break-all;
+    opacity: 0;
     transition: background-color 150ms ease-in-out;
     cursor: pointer;
+    animation: fadeIn 300ms ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+      }
 }
 
 .valueList li:hover {
