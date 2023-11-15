@@ -1,8 +1,8 @@
 import TextInput from "@/components/text-input/TextInput";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import InstructionsFieldArray from "../create-recipe/InstructionsFieldArray";
-import ListInput from "../create-recipe/ListInput";
-import s from "../create-recipe/create-recipe-screen.module.css";
+import InstructionsFieldArray from "./InstructionsFieldArray";
+import ListInput from "./ListInput";
+import s from "../create-edit/create-edit.module.css";
 
 interface RecipeType {
   title: string;

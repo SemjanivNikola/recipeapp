@@ -1,5 +1,5 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
-import s from "./create-recipe-screen.module.css";
+import s from "../create-edit/create-edit.module.css";
 import Icon from "@/components/icons/Icon";
 
 const InstructionsFieldArray = () => {

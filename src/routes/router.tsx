@@ -1,13 +1,13 @@
 import LoginScreen from "@/features/auth/LoginScreen";
 import RegisterScreen from "@/features/auth/RegisterScreen";
 import DashboardScreen from "@/features/dashboard/DashboardScreen";
-import MyRecipesScreen from "@/features/my-recipes/MyRecipesScreen";
-import RecipeDetailsScreen from "@/features/recipe-details/RecipeDetailsScreen";
+import MyRecipesScreen from "@/features/recipe/my-recipes/MyRecipesScreen";
+import RecipeDetailsScreen from "@/features/recipe/details/RecipeDetailsScreen";
 import { createBrowserRouter } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
 import NoMatch404 from "@/features/error/404";
-import CreateRecipeScreen from "@/features/create-recipe/CreateRecipeScreen";
-import EditRecipeScreen from "@/features/update-recipe/EditRecipeScreen";
+import CreateRecipeScreen from "@/features/recipe/create-edit/CreateRecipeScreen";
+import EditRecipeScreen from "@/features/recipe/create-edit/EditRecipeScreen";
 
 const Router = createBrowserRouter([
   { path: "/login", element: <LoginScreen /> },

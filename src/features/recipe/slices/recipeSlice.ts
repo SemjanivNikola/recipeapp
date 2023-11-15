@@ -2,7 +2,7 @@ import { Recipe } from "@/store/services/recipeApi";
 import { userApi } from "@/store/services/userApi";
 import { RootState } from "@/store/store";
 import { createSlice } from "@reduxjs/toolkit";
-import { storeRecipeIds } from "../recipeUtils";
+import { storeRecipeIds } from "../details/recipeUtils";
 
 interface RecipeSlice {
   recipes: Recipe[];
