@@ -1,5 +1,5 @@
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
-import s from "../create-recipe/create-recipe-screen.module.css";
+import s from "../create-edit/create-edit.module.css";
 
 const CreateEditLayout = ({ title, children }: { title: string; children: React.ReactElement }) => {
   return (

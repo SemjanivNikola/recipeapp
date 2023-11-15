@@ -3,7 +3,7 @@ import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
 import ActionBar from "./ActionBar";
 import s from "./recipe-details-screen.module.css";
-import ErrorView from "../error/ErrorView";
+import ErrorView from "../../error/ErrorView";
 
 const RecipeDetailsScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();

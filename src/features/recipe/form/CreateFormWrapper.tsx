@@ -1,11 +1,11 @@
 import ButtonSpinner from "@/components/spinner/ButttonSpinner";
 import { useCreateRecipeMutation } from "@/store/services/recipeApi";
 import { useSelector } from "react-redux";
-import { selectUser } from "../auth/slices/authSlice";
-import s from "../create-recipe/create-recipe-screen.module.css";
-import ErrorView from "../error/ErrorView";
-import RecipeForm from "../update-recipe/RecipeForm";
-import { formatDateForDisplay, formatDateForStore } from "./dateHelper";
+import { selectUser } from "../../auth/slices/authSlice";
+import s from "../create-edit/create-edit.module.css";
+import ErrorView from "../../error/ErrorView";
+import RecipeForm from "./RecipeForm";
+import { formatDateForDisplay, formatDateForStore } from "../helpers/dateHelper";
 
 interface RecipeType {
   title: string;

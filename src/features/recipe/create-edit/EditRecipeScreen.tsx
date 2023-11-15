@@ -1,8 +1,8 @@
 import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
-import ErrorView from "../error/ErrorView";
+import ErrorView from "../../error/ErrorView";
 import CreateEditLayout from "./CreateEditLayout";
-import EditFormWrapper from "./EditFormWrapper";
+import EditFormWrapper from "../form/EditFormWrapper";
 
 const EditRecipeScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();

@@ -1,5 +1,5 @@
-import CreateEditLayout from "../update-recipe/CreateEditLayout";
-import CreateFormWrapper from "./CreateFormWrapper";
+import CreateEditLayout from "./CreateEditLayout";
+import CreateFormWrapper from "../form/CreateFormWrapper";
 
 const CreateRecipeScreen = () => {
   return (

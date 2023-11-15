@@ -2,9 +2,9 @@ import ButtonSpinner from "@/components/spinner/ButttonSpinner";
 import { Recipe, useDeleteRecipeMutation, useUpdateRecipeMutation } from "@/store/services/recipeApi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { selectUser } from "../auth/slices/authSlice";
-import s from "../create-recipe/create-recipe-screen.module.css";
-import { formatDateForDisplay } from "../create-recipe/dateHelper";
+import { selectUser } from "../../auth/slices/authSlice";
+import s from "../create-edit/create-edit.module.css";
+import { formatDateForDisplay } from "../helpers/dateHelper";
 import RecipeForm from "./RecipeForm";
 
 interface RecipeType {

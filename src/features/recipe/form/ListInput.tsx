@@ -1,6 +1,6 @@
 import Icon from "@/components/icons/Icon";
 import { ChangeEvent, useState } from "react";
-import s from "./create-recipe-screen.module.css";
+import s from "../create-edit/create-edit.module.css";
 
 const ListInput = ({ list, update }: { list: string[]; update: (list: string[]) => void }) => {
   const [value, setValue] = useState("");

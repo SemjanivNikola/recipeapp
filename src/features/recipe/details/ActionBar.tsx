@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import s from "./recipe-details-screen.module.css";
 import { isRecipeOwner } from "./recipeUtils";
-import { selectRecipeIds } from "./slices/recipeSlice";
+import { selectRecipeIds } from "../slices/recipeSlice";
 import { Link } from "react-router-dom";
 
 const ActionBar = ({ recipeId }: { recipeId: string }) => {
