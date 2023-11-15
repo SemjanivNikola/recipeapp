@@ -1,29 +1,29 @@
 import Icon from "@/components/icons/Icon";
 import { useDispatch } from "react-redux";
-import { logout } from "../auth/slices/authSlice";
 import { NavLink } from "react-router-dom";
+import { logout } from "../auth/slices/authSlice";
 
 const Drawer = () => {
   const dispatch = useDispatch();
 
   return (
-    <div id="drawer">
+    <div id="drawer" className="relative">
       <div style={{ height: "8rem" }}>Logo</div>
-      <NavLink to="/" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link"}>
-        <Icon name="dashboard" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>DASHBOARD</span>
+      <NavLink to="/" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
+        <Icon name="dashboard" color="#fff" />
+        DASHBOARD
       </NavLink>
-      <NavLink to="/my-recipes" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link"}>
-        <Icon name="layers" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>MY RECIPES</span>
+      <NavLink to="/my-recipes" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
+        <Icon name="layers" color="#fff" />
+        MY RECIPES
       </NavLink>
-      <NavLink to="/create-recipe" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link"}>
-        <Icon name="layers-plus" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>CREATE RECIPE</span>
+      <NavLink to="/create-recipe" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
+        <Icon name="layers-plus" color="#fff" />
+        CREATE RECIPE
       </NavLink>
-      <button className="drawer-btn" onClick={() => dispatch(logout())}>
-        <Icon name="signout" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>SIGN OUT</span>
+      <button className="drawer-btn p-m" onClick={() => dispatch(logout())}>
+        <Icon name="signout" color="#fff" />
+        SIGN OUT
       </button>
     </div>
   );
