@@ -9,6 +9,8 @@ input.textInput {
     background-color: var(--white);
     color: var(--dark);
     padding-top: var(--s);
+    padding-left: var(--xs);
+    padding-right: var(--xs);
 }
 
 .focusIndicator {
