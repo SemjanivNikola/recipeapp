@@ -16,7 +16,7 @@ const InstructionsFieldArray = () => {
             <input {...register(`instructions.${index}`)} className={s.listTextInput} />
             <span className={s.focusIndicator}></span>
           </div>
-          <div className={s.iconButtonRow}>
+          <div className="flex align-center gap-s" style={{ paddingTop: "var(--m)" }}>
             <button type="button" onClick={() => append("Type instructions here")} className={s.iconButton}>
               <Icon name="plus" size={18} />
             </button>
