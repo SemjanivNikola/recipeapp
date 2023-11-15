@@ -1,10 +1,10 @@
 import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
 import ErrorView from "../error/ErrorView";
-import CreateUpdateLayout from "./CreateUpdateLayout";
-import UpdateFormWrapper from "./UpdateFormWrapper";
+import CreateEditLayout from "./CreateEditLayout";
+import EditFormWrapper from "./EditFormWrapper";
 
-const UpdateRecipeScreen = () => {
+const EditRecipeScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
   const { data, error, isFetching } = useFetchByIdQuery(recipeId as string);
 
@@ -15,10 +15,10 @@ const UpdateRecipeScreen = () => {
   }
 
   return (
-    <CreateUpdateLayout title={`Update ${data.title} recipe`}>
-      <UpdateFormWrapper recipe={data} />
-    </CreateUpdateLayout>
+    <CreateEditLayout title={`Update ${data.title} recipe`}>
+      <EditFormWrapper recipe={data} />
+    </CreateEditLayout>
   );
 };
 
-export default UpdateRecipeScreen;
+export default EditRecipeScreen;

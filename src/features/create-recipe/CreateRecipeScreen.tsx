@@ -1,11 +1,11 @@
-import CreateUpdateLayout from "../update-recipe/CreateUpdateLayout";
+import CreateEditLayout from "../update-recipe/CreateEditLayout";
 import CreateFormWrapper from "./CreateFormWrapper";
 
 const CreateRecipeScreen = () => {
   return (
-    <CreateUpdateLayout title="Create new recipe">
+    <CreateEditLayout title="Create new recipe">
       <CreateFormWrapper />
-    </CreateUpdateLayout>
+    </CreateEditLayout>
   );
 };
 

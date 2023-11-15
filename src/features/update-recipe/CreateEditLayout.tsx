@@ -1,7 +1,7 @@
 import ScreenHeader from "@/components/screen-header/ScreenHeader";
 import s from "../create-recipe/create-recipe-screen.module.css";
 
-const CreateUpdateLayout = ({ title, children }: { title: string; children: React.ReactElement }) => {
+const CreateEditLayout = ({ title, children }: { title: string; children: React.ReactElement }) => {
   return (
     <div style={{ height: "100%", backgroundColor: "#ccc" }}>
       <ScreenHeader title={title} />
@@ -10,4 +10,4 @@ const CreateUpdateLayout = ({ title, children }: { title: string; children: Reac
   );
 };
 
-export default CreateUpdateLayout;
+export default CreateEditLayout;

@@ -15,7 +15,7 @@ interface RecipeType {
   tags: string[];
 }
 
-const UpdateFormWrapper = ({ recipe }: { recipe: Recipe }) => {
+const EditFormWrapper = ({ recipe }: { recipe: Recipe }) => {
   const user = useSelector(selectUser);
   const navigate = useNavigate();
   const [updateRecipe, updateStatus] = useUpdateRecipeMutation();
@@ -91,4 +91,4 @@ const UpdateFormWrapper = ({ recipe }: { recipe: Recipe }) => {
   );
 };
 
-export default UpdateFormWrapper;
+export default EditFormWrapper;
