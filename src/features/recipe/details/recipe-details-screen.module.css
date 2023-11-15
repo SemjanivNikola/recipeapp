@@ -1,0 +1,28 @@
+.card {
+    color: var(--white);
+    border-radius: var(--border-radius);
+    background-color: var(--primary-dark);
+}
+
+.pTitle {
+    font-weight: 700;
+}
+
+.pillTag {
+    font-size: var(--font-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: var(--s);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary);
+}
+
+.instructionList {
+    padding-left: var(--xl);
+}
+
+.instructionList li {
+    margin-bottom: var(--s);
+}

@@ -1,0 +1,135 @@
+.form {
+    max-width: 65%;
+    margin: var(--lg) auto;
+    padding: var(--m);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w70 {
+    width: 70%;
+}
+
+.label {
+    text-transform: uppercase;
+    font-size: var(--font-xs);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin: var(--m) 0;
+    background-color: var(--gray-tone);
+}
+
+/* ============ LIST INPUT ============ */
+.listTextInput {
+    width: 100%;
+    background-color: var(--white);
+}
+
+.listTextInput {
+    width: 100%;
+    height: 36px;
+    outline: none;
+    border: none;
+    font-size: var(--font-m);
+    border-bottom: 2px solid var(--gray);
+    appearance: none;
+    background-color: var(--white);
+    color: var(--dark);
+    padding-top: var(--s);
+}
+
+.focusIndicator {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--primary-light);
+    transition: width 150ms ease-in-out;
+}
+
+.listTextInput:focus~.focusIndicator {
+    width: 100%;
+}
+
+.iconButton, .iconButtonDanger {
+    width: 2rem;
+    height: 2rem;
+    padding: 5px 5.25px;
+    border-radius: 50%;
+    transition: background-color 150ms ease-in-out;
+}
+
+.iconButton {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.iconButtonDanger {
+    background-color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.iconButton:hover {
+    background: transparent;
+}
+
+.iconButton:hover svg {
+    fill: var(--dark);
+}
+
+.valueList,
+.fieldArray {
+    list-style-type: none;
+    margin-bottom: var(--xl);
+}
+
+.fieldArray li {
+    align-items: flex-start;
+}
+
+.valueList li {
+    display: inline-block;
+    border-radius: var(--border-radius);
+    margin-right: var(--s);
+    margin-bottom: var(--s);
+    padding: .25rem var(--s);
+    font-size: .85rem;
+    color: var(--white);
+    background-color: var(--primary);
+    word-wrap: break-word;
+    word-break: break-all;
+    opacity: 0;
+    transition: background-color 150ms ease-in-out;
+    cursor: pointer;
+    animation: fadeIn 300ms ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+      }
+}
+
+.valueList li:hover {
+    background-color: var(--danger);
+}
+
+.valueList li div {
+    display: inline-block;
+    vertical-align: sub;
+    margin-left: var(--s);
+}

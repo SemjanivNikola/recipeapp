@@ -1,0 +1,14 @@
+.logoWeapper {
+    width: 256px;
+}
+
+.smallLogoWrapper {
+    width: 116px;
+    margin: 0 auto var(--m) auto;
+    padding: var(--lg);
+}
+
+.logoWeapper img, .smallLogoWrapper img {
+    width: 100%;
+    height: auto;
+}

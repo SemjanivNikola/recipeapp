@@ -1,0 +1,37 @@
+/**      TOAST FEEDBACK        **/
+#toast {
+    top: var(--m);
+    right: var(--m);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-size: var(--font-m);
+    font-weight: 500;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    letter-spacing: 0.025em;
+    z-index: 99999;
+}
+#toast.success {
+    background-color: var(--success);
+}
+#toast.fail {
+    background-color: var(--danger);
+}
+
+#toast.slide-right {
+    animation-name: slideRight;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-fill-mode: forwards;
+}
+#toast.fade-in {
+    animation: fadeIn ease 500ms;
+}
+@keyframes slideRight {
+    from {transform: translateX(0); opacity: 1;}
+    to {transform: translateX(100%); opacity: 0;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

@@ -1,0 +1,210 @@
+:root {
+  /* Font size */
+  --font-xs: .75rem; /* 12px */
+  --font-s: .875rem; /* 14px */
+  --font-m: 1rem; /* 16px */
+  --font-lg: 1.25rem; /* 20px */
+  --font-xl: 2.125rem; /* 32px */
+  --font-2xl: 3.25rem; /* 52px */
+
+  /* Spacing */
+  --xs: .25rem; /* 4px */
+  --s: .5rem; /* 8px */
+  --m: 1rem; /* 16px */
+  --lg: 1.5rem; /* 24px */
+  --xl: 2rem; /* 32px */
+  --2xl: 3rem; /* 48px */
+  --3xl: 5rem; /* 80px */
+
+  --border-radius: .5rem;
+
+   /* Colors */
+   --action: #e2ff8c;
+   --white: #fff;
+   --black: #1c1c1e;
+   --black-inverse: #e3e3e1;
+   --gray: #cad2c5;
+   --gray-tone: rgba(204, 204, 204, .25);
+   --shadow: rgba(0, 0, 0, .8);
+   --success: rgba(22, 163, 74, .88);
+   --danger: rgba(244, 63, 94, .88);
+
+   /* Analogous Palette */
+   --primary: #52796f;
+   --primary-light: #84a98c;
+   --primary-dark: #2f3e46;
+   --secondary: #354f52;
+
+
+    /* Default values */
+    font-family: Roboto, sans-serif; /* used for ordinary text */
+    font-size: var(--font-m);
+    line-height: 1.1;
+    font-weight: 400;
+
+    color-scheme: light;
+    color: var(--black);
+    background-color: var(--primary-light);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+h1 {
+  font-size: var(---font-xl);
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+button {
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  padding: .4em 1.2em;
+  font-size: var(--font-s);
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 150ms ease-out;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/**      COLOR SCHEME        **/
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #291f38;
+    color: #8968bc;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* ================================ */
+/*            POSITION              */
+/* ================================ */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/* ================================ */
+/*              MARGIN              */
+/* ================================ */
+.mb-s {
+  margin-bottom: .5rem;
+}
+
+.mb-m {
+  margin-bottom: 1rem;
+}
+
+/* ================================ */
+/*             PADDING              */
+/* ================================ */
+.p-m {
+  padding: var(--m);
+}
+.p-lg {
+  padding: var(--lg);
+}
+.px-s {
+  padding: 0 var(--s);
+}
+
+/* ================================ */
+/*            TEXT ALIGN            */
+/* ================================ */
+.text-start {
+  text-align: start;
+}
+
+/* ================================ */
+/*               FLEX               */
+/* ================================ */
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.gap-s {
+  gap: var(--s);
+}
+
+.gap-m {
+  gap: var(--m);
+}
+
+/**      OVERRIDDING DEFAULT BROWSER AUTOFILL BEHAIOUR        **/
+input:auto-fill {
+  animation: onAutoFillStart ease 1ms;
+}
+
+input:-webkit-autofill {
+  animation: onAutoFillStart ease 1ms;
+}
+
+input:not(:-webkit-autofill) {
+  animation: onAutoFillCancel ease 1ms;
+}
+
+input:not(:auto-fill) {
+  animation: onAutoFillCancel ease 1ms;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #1c1c1e;
+  -webkit-box-shadow: 0 0 0 40px #fff inset !important;
+}

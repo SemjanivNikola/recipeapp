@@ -1,0 +1,30 @@
+.header {
+    text-transform: capitalize;
+}
+
+.formHeader {
+    color: var(--dark);
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--font-xl) !important;
+}
+
+@media (max-width: 756px) {
+    .header, .formHeader {
+        display: none;
+    }
+}
+@media (min-width: 756px) {
+    .header {
+        padding: var(--lg);
+        border-bottom: 1px solid var(--primary-dark);
+    }
+
+    .formHeader {
+        padding: 1.5rem;
+        color: var(--dark);
+        text-align: center;
+    }
+}
