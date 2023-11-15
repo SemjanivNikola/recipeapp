@@ -24,11 +24,18 @@ const ListInput = ({ list, update }: { list: string[]; update: (list: string[]) 
     update(updatedList);
   }
 
+  function onKeyDown(e: any) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      add();
+    }
+  }
+
   return (
     <>
       <div className={s.row}>
         <div className="relative mb-s grow">
-          <input value={value} onChange={onChange} className={s.listTextInput} />
+          <input value={value} onChange={onChange} className={s.listTextInput} onKeyDown={onKeyDown} />
           <span className={s.focusIndicator}></span>
         </div>
         <button onClick={add} className={s.iconButton} type="button">
