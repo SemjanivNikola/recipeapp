@@ -17,10 +17,10 @@ const InstructionsFieldArray = () => {
             <span className={s.focusIndicator}></span>
           </div>
           <div className={s.iconButtonRow}>
-            <button onClick={() => append("Type instructions here")} className={s.iconButton}>
+            <button type="button" onClick={() => append("Type instructions here")} className={s.iconButton}>
               <Icon name="plus" size={18} color="#fff" />
             </button>
-            <button onClick={() => remove(index)} className={s.iconButtonDanger}>
+            <button type="button" onClick={() => remove(index)} className={s.iconButtonDanger}>
               <Icon name="trash-can-outline" size={18} color="#fff" />
             </button>
           </div>
