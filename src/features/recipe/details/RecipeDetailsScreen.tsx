@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ActionBar from "./ActionBar";
 import s from "./recipe-details-screen.module.css";
 import ErrorView from "../../error/ErrorView";
+import { formatDateForDisplay } from "../helpers/dateHelper";
 
 const RecipeDetailsScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
@@ -14,6 +15,8 @@ const RecipeDetailsScreen = () => {
   } else if (error || !data) {
     return <ErrorView error={error} />;
   }
+
+  const dateCreated = formatDateForDisplay(new Date(data.dateCreated));
 
   return (
     <>
@@ -27,7 +30,7 @@ const RecipeDetailsScreen = () => {
           </p>
           <p>
             <span className={s.pTitle}>Created: </span>
-            {data.dateCreated}
+            {dateCreated}
           </p>
         </div>
         <div className={s.pillWrapper}>

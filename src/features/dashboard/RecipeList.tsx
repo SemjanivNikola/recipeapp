@@ -1,6 +1,7 @@
 import { Recipe } from "@/store/services/recipeApi";
 import { useNavigate } from "react-router-dom";
 import s from "./dashboard.module.css";
+import { formatDateForDisplay } from "../recipe/helpers/dateHelper";
 
 interface RecipeListProps {
   list?: Recipe[];
@@ -39,7 +40,7 @@ const RecipeListItem = ({ item, index, onClick }: { item: Recipe; index: number;
   <tr onClick={() => onClick(item.id)}>
     <td>{index}</td>
     <td>{item.title}</td>
-    <td>{item.dateCreated}</td>
+    <td>{formatDateForDisplay(new Date(item.dateCreated))}</td>
   </tr>
 );
 
