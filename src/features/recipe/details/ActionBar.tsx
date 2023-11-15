@@ -1,8 +1,8 @@
+import Icon from "@/components/icons/Icon";
 import { useSelector } from "react-redux";
-import s from "./recipe-details-screen.module.css";
-import { isRecipeOwner } from "./recipeUtils";
-import { selectRecipeIds } from "../slices/recipeSlice";
 import { Link } from "react-router-dom";
+import { selectRecipeIds } from "../slices/recipeSlice";
+import { isRecipeOwner } from "./recipeUtils";
 
 const ActionBar = ({ recipeId }: { recipeId: string }) => {
   const recipeIds = useSelector(selectRecipeIds);
@@ -10,11 +10,17 @@ const ActionBar = ({ recipeId }: { recipeId: string }) => {
 
   if (isOwner)
     return (
-      <div className={s.actionBar}>
-        <button className={s.btnTransparent}>
-          <Link to={`/edit-recipe/${recipeId}`}>Edit</Link>
+      <div className="flex align-center justify-end gap-m mb-m">
+        <Link to={`/edit-recipe/${recipeId}`}>
+          <button type="button" className="btn-icon transparent">
+            <Icon name="pencil-outline" color="var(--dark)" />
+            Edit
+          </button>
+        </Link>
+        <button type="button" className="btn-icon danger">
+          <Icon name="trash-can-outline" />
+          Delete
         </button>
-        <button className={s.btnDanger}>Delete</button>
       </div>
     );
 

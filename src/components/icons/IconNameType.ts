@@ -6,6 +6,7 @@ type IconName =
   | "layers-plus"
   | "layers"
   | "magnify"
+  | "pencil-outline"
   | "plus"
   | "signout"
   | "trash-can-outline";

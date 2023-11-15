@@ -3,7 +3,6 @@ import Searchbar from "@/components/searchbar/Searchbar";
 import Skeleton from "@/components/skeleton/Skeleton";
 import { useFetchAllQuery } from "@/store/services/recipeApi";
 import RecipeList from "./RecipeList";
-import s from "./dashboard.module.css";
 import ErrorView from "../error/ErrorView";
 
 const DashboardScreen = () => {
@@ -16,7 +15,7 @@ const DashboardScreen = () => {
   return (
     <>
       <ScreenHeader title="Dashboard" />
-      <div className={s.content}>
+      <div className="p-lg" style={{ overflowY: "scroll" }}>
         <Searchbar />
         {isFetching ? <Skeleton.List /> : <RecipeList list={data} />}
       </div>

@@ -1,29 +1,29 @@
 import Icon from "@/components/icons/Icon";
 import { useDispatch } from "react-redux";
-import { logout } from "../auth/slices/authSlice";
 import { NavLink } from "react-router-dom";
+import { logout } from "../auth/slices/authSlice";
 
 const Drawer = () => {
   const dispatch = useDispatch();
 
   return (
-    <div id="drawer">
+    <div id="drawer" className="relative">
       <div style={{ height: "8rem" }}>Logo</div>
-      <NavLink to="/" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link"}>
+      <NavLink to="/" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
         <Icon name="dashboard" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>DASHBOARD</span>
+        DASHBOARD
       </NavLink>
-      <NavLink to="/my-recipes" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link"}>
+      <NavLink to="/my-recipes" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
         <Icon name="layers" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>MY RECIPES</span>
+        MY RECIPES
       </NavLink>
-      <NavLink to="/create-recipe" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link"}>
+      <NavLink to="/create-recipe" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
         <Icon name="layers-plus" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>CREATE RECIPE</span>
+        CREATE RECIPE
       </NavLink>
-      <button className="drawer-btn" onClick={() => dispatch(logout())}>
+      <button className="drawer-btn p-m" onClick={() => dispatch(logout())}>
         <Icon name="signout" />
-        <span style={{ letterSpacing: 1.6, fontWeight: "700", fontSize: 14 }}>SIGN OUT</span>
+        SIGN OUT
       </button>
     </div>
   );

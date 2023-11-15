@@ -1,0 +1,33 @@
+.tableList {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.firstCol {
+    width: var(--lg);
+    min-width: var(--lg);
+}
+
+th {
+    text-transform: uppercase;
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+th,
+td {
+    padding: var(--m);
+}
+
+td {
+    border-bottom: 1px solid var(--gray);
+}
+
+tr {
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: var(--gray-tone);
+}

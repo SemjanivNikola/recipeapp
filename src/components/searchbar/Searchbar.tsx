@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "../icons/Icon";
 import s from "./searchbar.module.css";
-import { useNavigate } from "react-router-dom";
 
 const Searchbar = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Searchbar = () => {
 
   return (
     <div id={s.searchbar}>
-      <Icon name="magnify" />
+      <Icon name="magnify" color="var(--dark)" />
       <div className={s.searchInputWrapper}>
         <input
           value={search}
@@ -26,8 +26,8 @@ const Searchbar = () => {
         <span className={s.focusIndicator}></span>
       </div>
 
-      <button className={s.searchbarBtn} onClick={onClick}>
-        <Icon name="plus" color="#fff" />
+      <button className="flex align-center gap-s action" onClick={onClick}>
+        <Icon name="plus" color="var(--primary-dark)" />
         Create recipe
       </button>
     </div>

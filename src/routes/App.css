@@ -1,21 +1,6 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  height: 100svh;
-  overflow: hidden;
-  background-color: rgb(138, 105, 189);
-}
-
 #root {
   width: 100%;
   height: inherit;
-  background-color: #ffffff;
-  color: #213547;
 }
 
 #main {
@@ -26,43 +11,44 @@ body {
 }
 
 .screen {
-    width: 80%;
-    height: inherit;
+  width: 100%;
+  height: inherit;
 }
 
 /* =========== Drawer =========== */
 #drawer {
-  position: relative;
-  width: 20%;
+  width: 18%;
   height: inherit;
   max-width: 350px;
-  background-color: rgba(255, 255, 255, .4);
-  border-right: 2px solid #71bc68;
+  flex-shrink: 0;
+  color: var(--white);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  background-color: var(--primary-dark);
+  -webkit-box-shadow: 5px 5px 22px -15px var(--shadow);
+  -moz-box-shadow: 5px 5px 22px -15px var(--shadow);
+  box-shadow: 5px 5px 22px -15px var(--shadow);
 }
 
-a.drawer-link {
-  color: inherit;
-}
-
-a.drawer-link, button.drawer-btn {
-  /* flex-row justify-start align-center gap-05 p-1 */
+a.drawer-link,
+button.drawer-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: .5rem;
-  padding: 1rem;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+  font-size: var(--font-s);
+  color: inherit;
   transition: all 150ms ease-out;
 }
-a.drawer-link:hover, button.drawer-btn:hover {
-  background-color: rgba(111, 188, 103, .8);
-  color: #fff;
+
+a.drawer-link:hover,
+button.drawer-btn:hover {
+  background-color: var(--primary);
 }
-a.drawer-link:hover svg, a.drawer-link.active svg, button.drawer-btn:hover svg {
-  fill: #fff;
-}
+
 a.drawer-link.active {
-  background-color: #71bc68;
-  color: #fff;
+  background-color: var(--primary);
   pointer-events: none;
 }
 
@@ -74,8 +60,58 @@ button.drawer-btn {
   outline: none;
   border: none;
   background-color: transparent;
-  color: inherit;
   font-family: inherit;
-  font-size: inherit;
   cursor: pointer;
 }
+
+/* =========== BUTTON =========== */
+button.btn-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--s);
+}
+
+button.action, button.btn-icon {
+  color: var(--primary-dark);
+  background-color: var(--action);
+}
+
+button.action:hover, button.btn-icon:hover {
+  background-color: var(--white);
+  border-color: var(--action);
+}
+
+/* =========== button - TRANSPARENT =========== */
+button.action.transparent, button.btn-icon.transparent {
+  color: var(--primary-dark);
+  background: transparent;
+}
+
+button.action.transparent:hover, button.btn-icon.transparent:hover {
+  color: var(--white);
+  background-color: var(--primary);
+  border-color: transparent;
+}
+
+button.action.transparent:hover svg, button.btn-icon.transparent:hover svg {
+  fill: var(--white);
+}
+
+/* =========== button - DANGER =========== */
+button.action.danger, button.btn-icon.danger {
+  color: var(--white);
+  background-color: var(--danger);
+}
+
+button.action.danger:hover, button.btn-icon.danger:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+  background: transparent;
+}
+
+button.action.danger:hover svg, button.btn-icon.danger:hover svg {
+  fill: var(--danger);
+}
+
+
+/* =========== Drawer =========== */

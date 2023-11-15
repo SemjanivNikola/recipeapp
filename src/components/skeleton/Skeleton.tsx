@@ -9,13 +9,13 @@ const SkeletonScreenHeader = () => (
 const Skeleton = () => (
   <div className={s.skeletonScreen}>
     <SkeletonScreenHeader />
-    <div className={s.rowJustifyEnd}>
+    <div className="flex align-center justify-end gap-m p-m">
       <div className={s.skeletonBtn} />
       <div className={s.skeletonBtn} />
     </div>
     <SkeletonScreenHeader />
-    <div className={s.content}>
-      <div className={s.row}>
+    <div className="p-lg">
+      <div className="flex gap-m">
         <div className={s.skeletonBtn} />
         <div className={s.skeletonBtn} />
         <div className={s.skeletonBtn} />
@@ -28,17 +28,17 @@ const Skeleton = () => (
 const CreateEditSkeleton = () => (
   <div className={s.skeletonScreen}>
     <SkeletonScreenHeader />
-    <div className={s.content}>
+    <div className="p-lg">
       <div className={s.skeletonForm}>
-        <div className={s.row}>
+        <div className="flex gap-m">
           <div className={s.w30}>
-            <div className={`${s.skeletonContent} ${s.mb1}`} />
-            <div className={`${s.skeletonContent} ${s.mb1}`} />
+            <div className={`${s.skeletonContent} mb-m`} />
+            <div className={`${s.skeletonContent} mb-m`} />
           </div>
           <div className={s.w70}>
-            <div className={`${s.skeletonContent} ${s.mb1}`} />
-            <div className={`${s.skeletonContent} ${s.mb1}`} />
-            <div className={`${s.skeletonContent} ${s.mb1}`} />
+            <div className={`${s.skeletonContent} mb-m`} />
+            <div className={`${s.skeletonContent} mb-m`} />
+            <div className={`${s.skeletonContent} mb-m`} />
           </div>
         </div>
         <div className={s.skeletonActionRow}>
