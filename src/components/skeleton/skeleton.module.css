@@ -1,16 +1,13 @@
 .skeletonTable {
     width: 100%;
-    box-shadow: 0 5px 10px 0 rgba(#000, .15);
 }
 
 .skeletonTableHeader {
     display: flex;
     align-items: center;
     min-height: 40px;
-    padding: .5rem;
-    background-color: rgb(111, 189, 102) !important;
-    color: #000;
-    text-transform: uppercase;
+    padding: var(--s);
+    background-color: var(--primary-dark) !important;
 }
 
 /* The shine that's going to move across the skeleton: */
@@ -31,8 +28,8 @@
 }
 
 .indexCol {
-    width: 25px;
-    min-width: 25px;
+    width: var(--lg);
+    min-width: var(--lg);
 }
 
 .firstCol {
@@ -62,53 +59,31 @@
 
 .skeletonScreenHeader {
     min-height: 105px;
-    padding: 1.5rem;
+    padding: var(--lg);
 }
 
 .skeletonFullContent {
     height: 100%;
     min-height: 57px;
     width: 100%;
-    border-radius: .5rem;
+    border-radius: var(--border-radius);
 }
 
 .skeletonContent {
     width: 100%;
-    height: 32px;
-    border-radius: .5rem;
-}
-
-.mb1 {
-    margin-bottom: 1rem;
-}
-
-.content {
-    padding: 1.5rem;
+    height: var(--xl);
+    border-radius: var(--border-radius);
 }
 
 .skeletonForm {
     max-width: 65%;
-    margin: 1.5rem auto;
-    padding: 1rem;
-    border-radius: .5rem;
-    background-color: #fff;
+    margin: var(--lg) auto;
+    padding: var(--m);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
     -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
     -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
-}
-
-.row {
-    display: flex;
-    gap: 1rem;
-}
-
-.rowJustifyEnd {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: flex-end;
-    padding-top: 1rem;
-    padding-right: 1.5rem;
 }
 
 .w30 {
@@ -122,11 +97,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 3rem;
+    padding-top: var(--2xl);
 }
 
 .skeletonBtn {
     width: 100px;
-    height: 2rem;
-    border-radius: .5rem;
+    height: var(--xl);
+    border-radius: var(--border-radius);
 }
