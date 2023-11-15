@@ -38,7 +38,7 @@ const RecipeList = ({ list }: RecipeListProps) => {
 
 const RecipeListItem = ({ item, index, onClick }: { item: Recipe; index: number; onClick: (id: string) => void }) => (
   <tr onClick={() => onClick(item.id)}>
-    <td>{index}</td>
+    <td>{index + 1}</td>
     <td>{item.title}</td>
     <td>{formatDateForDisplay(new Date(item.dateCreated))}</td>
   </tr>
