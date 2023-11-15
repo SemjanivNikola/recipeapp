@@ -11,12 +11,12 @@ const ActionBar = ({ recipeId }: { recipeId: string }) => {
   if (isOwner)
     return (
       <div className="flex align-center justify-end gap-m mb-m">
-        <button type="button" className="btn-icon transparent">
-          <Icon name="pencil-outline" color="#000" />
-          <Link to={`/edit-recipe/${recipeId}`} style={{ color: "inherit" }}>
+        <Link to={`/edit-recipe/${recipeId}`}>
+          <button type="button" className="btn-icon transparent">
+            <Icon name="pencil-outline" color="#000" />
             Edit
-          </Link>
-        </button>
+          </button>
+        </Link>
         <button type="button" className="btn-icon danger">
           <Icon name="trash-can-outline" color="#fff" />
           Delete
