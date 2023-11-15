@@ -1,0 +1,57 @@
+.skeletonTable {
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px 0 rgba(#000, .15);
+}
+
+.skeletonTableHeader {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: .5rem;
+    background-color: rgb(111, 189, 102);
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* The shine that's going to move across the skeleton: */
+.skeletonTableHeader, .skeletonTableRow {
+    background-image: linear-gradient(90deg, #ffffff00, #ffffff50, #ffffff00);
+    /* width of the shine */
+    background-size: 40px 100%;
+    /* No need to repeat the shine effect */
+    background-repeat: no-repeat;
+    /* Place shine on the left side, with offset on the left based on the width of the shine - see background-size */
+    background-position: left -40px top 0;
+    /* increase animation time to see effect in 'slow-mo' */
+    animation: shine 2s ease infinite;
+}
+
+.indexCol {
+    width: 25px;
+    min-width: 25px;
+}
+
+.firstCol {
+    width: 60%;
+}
+
+.secondCol {
+    width: 40%;
+}
+
+.skeletonTableRow {
+    background-color: #e2e5e7;
+    min-height: 40px;
+}
+
+.empty {
+    height: .5rem;
+    background-color: #fff;
+}
+
+@keyframes shine {
+    to {
+        background-position: right -40px top 0;
+    }
+}
