@@ -1,7 +1,7 @@
 import { Recipe } from "@/store/services/recipeApi";
 import { useNavigate } from "react-router-dom";
-import s from "./dashboard.module.css";
 import { formatDateForDisplay } from "../recipe/helpers/dateHelper";
+import s from "./dashboard.module.css";
 
 interface RecipeListProps {
   list?: Recipe[];
