@@ -24,7 +24,7 @@ const Toast = () => {
   if (!message) return null;
 
   return (
-    <div id="toast" className={`${animation} ${type}`}>
+    <div id="toast" className={`${animation} ${type} absolute p-m`}>
       {message}
     </div>
   );

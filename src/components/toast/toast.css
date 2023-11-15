@@ -1,22 +1,20 @@
 /**      TOAST FEEDBACK        **/
 #toast {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    border-radius: 0.25rem;
-    padding: 1rem;
-    color: #fff;
-    font-size: medium;
+    top: var(--m);
+    right: var(--m);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-size: var(--font-m);
     font-weight: 500;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     letter-spacing: 0.025em;
     z-index: 99999;
 }
 #toast.success {
-    background-color: rgba(22, 163, 74, 0.88);
+    background-color: var(--success);
 }
 #toast.fail {
-    background-color: rgba(244, 63, 94, 0.88);
+    background-color: var(--danger);
 }
 
 #toast.slide-right {
