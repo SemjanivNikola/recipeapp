@@ -1,3 +1,4 @@
+import { recipeApi } from "@/store/services/recipeApi";
 import { RootState } from "@/store/store";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -14,15 +15,26 @@ const initialState: ToastSlice = {
 const toastSlice = createSlice({
   name: "toast",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    reset: (state) => {
+      state.message = null;
+    },
+  },
   extraReducers: (builder) => {
-    builder.addMatcher(
-      (action) => action.type.endsWith("/fulfilled"),
-      (state, action) => {
-        state.type = "success";
-        state.message = action.payload.message;
-      }
-    );
+    // Match just create, update and delete fulfilled endpoints
+    builder.addMatcher(recipeApi.endpoints.createRecipe.matchFulfilled, (state, action) => {
+      state.type = "success";
+      state.message = action.payload.message;
+    });
+    builder.addMatcher(recipeApi.endpoints.updateRecipe.matchFulfilled, (state, action) => {
+      state.type = "success";
+      state.message = action.payload.message;
+    });
+    builder.addMatcher(recipeApi.endpoints.deleteRecipe.matchFulfilled, (state, action) => {
+      state.type = "success";
+      state.message = action.payload.message;
+    });
+    // Match all rejected
     builder.addMatcher(
       (action) => action.type.endsWith("/rejected"),
       (state, action) => {
@@ -35,5 +47,6 @@ const toastSlice = createSlice({
 
 export const selectToast = (state: RootState) => state.toast;
 
+export const { reset } = toastSlice.actions;
 // Expose auth type to main store
 export default toastSlice.reducer;
