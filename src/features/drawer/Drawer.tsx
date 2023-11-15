@@ -2,13 +2,14 @@ import Icon from "@/components/icons/Icon";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { logout } from "../auth/slices/authSlice";
+import Logo from "@/components/logo/Logo";
 
 const Drawer = () => {
   const dispatch = useDispatch();
 
   return (
     <div id="drawer" className="relative">
-      <div style={{ height: "8rem" }}>Logo</div>
+      <Logo small />
       <NavLink to="/" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
         <Icon name="dashboard" />
         DASHBOARD
