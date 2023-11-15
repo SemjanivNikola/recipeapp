@@ -15,7 +15,7 @@ const DashboardScreen = () => {
   return (
     <>
       <ScreenHeader title="Dashboard" />
-      <div className="p-lg">
+      <div className="p-lg" style={{ overflowY: "scroll" }}>
         <Searchbar />
         {isFetching ? <Skeleton.List /> : <RecipeList list={data} />}
       </div>
