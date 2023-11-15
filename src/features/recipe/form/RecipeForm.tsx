@@ -44,8 +44,12 @@ const RecipeForm = ({ initialValues, staticData, onAPISubmit, formActionButtons 
         <div className="flex gap-m">
           <div className={s.w30}>
             {/* Author and date can not be modified */}
-            <div>Author: {staticData.userName}</div>
-            <div>Date: {staticData.dateCreated}</div>
+            <p className="mb-s">
+              <span className={s.label}>Author:</span> {staticData.userName}
+            </p>
+            <p>
+              <span className={s.label}>Date:</span> {staticData.dateCreated}
+            </p>
           </div>
           <div className={s.w70}>
             <Controller
@@ -65,9 +69,9 @@ const RecipeForm = ({ initialValues, staticData, onAPISubmit, formActionButtons 
               )}
             />
 
-            <InstructionsFieldArray />
-
-            <ListInput list={tags} update={handleUpdate} />
+            <InstructionsFieldArray label="Instructions" />
+            <div className={s.divider} />
+            <ListInput list={tags} update={handleUpdate} label="Tags" />
           </div>
         </div>
 
