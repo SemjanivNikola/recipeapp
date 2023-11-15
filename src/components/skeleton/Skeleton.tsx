@@ -1,37 +1,33 @@
 import s from "./skeleton.module.css";
 
+const SkeletonScreenHeader = () => (
+  <div className={s.skeletonScreenHeader}>
+    <div className={s.skeletonFullContent} />
+  </div>
+);
+
 const Skeleton = () => (
   <div className={s.skeletonScreen}>
-    <div className={s.skeletonScreenHeader}>
-      <div className={s.skeletonFullContent}></div>
+    <SkeletonScreenHeader />
+    <div className={s.rowJustifyEnd}>
+      <div className={s.skeletonBtn} />
+      <div className={s.skeletonBtn} />
     </div>
+    <SkeletonScreenHeader />
     <div className={s.content}>
-      <div className={s.skeletonForm}>
-        <div className={s.row}>
-          <div className={s.w30}>
-            <div className={s.skeletonContent} />
-            <div className={s.skeletonContent} />
-          </div>
-          <div className={s.w70}>
-            <div className={s.skeletonContent} />
-            <div className={s.skeletonContent} />
-            <div className={s.skeletonContent} />
-          </div>
-        </div>
-        <div className={s.skeletonActionRow}>
-          <div className={s.skeletonBtn} />
-          <div className={s.skeletonBtn} />
-        </div>
+      <div className={s.row}>
+        <div className={s.skeletonBtn} />
+        <div className={s.skeletonBtn} />
+        <div className={s.skeletonBtn} />
       </div>
     </div>
+    <SkeletonScreenHeader />
   </div>
 );
 
 const CreateEditSkeleton = () => (
   <div className={s.skeletonScreen}>
-    <div className={s.skeletonScreenHeader}>
-      <div className={s.skeletonFullContent}></div>
-    </div>
+    <SkeletonScreenHeader />
     <div className={s.content}>
       <div className={s.skeletonForm}>
         <div className={s.row}>
