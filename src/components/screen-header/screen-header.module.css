@@ -3,12 +3,12 @@
 }
 
 .formHeader {
-    color: #fff;
+    color: var(--dark);
     text-align: center;
 }
 
 h1 {
-    font-size: 32px !important;
+    font-size: var(--font-xl) !important;
 }
 
 @media (max-width: 756px) {
@@ -18,13 +18,13 @@ h1 {
 }
 @media (min-width: 756px) {
     .header {
-        padding: 1.5rem;
+        padding: var(--lg);
         border-bottom: 1px solid var(--primary-dark);
     }
 
     .formHeader {
         padding: 1.5rem;
-        color: #fff;
+        color: var(--dark);
         text-align: center;
     }
 }
