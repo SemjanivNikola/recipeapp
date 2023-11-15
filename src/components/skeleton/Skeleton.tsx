@@ -36,13 +36,13 @@ const CreateEditSkeleton = () => (
       <div className={s.skeletonForm}>
         <div className={s.row}>
           <div className={s.w30}>
-            <div className={s.skeletonContent} />
-            <div className={s.skeletonContent} />
+            <div className={`${s.skeletonContent} ${s.mb1}`} />
+            <div className={`${s.skeletonContent} ${s.mb1}`} />
           </div>
           <div className={s.w70}>
-            <div className={s.skeletonContent} />
-            <div className={s.skeletonContent} />
-            <div className={s.skeletonContent} />
+            <div className={`${s.skeletonContent} ${s.mb1}`} />
+            <div className={`${s.skeletonContent} ${s.mb1}`} />
+            <div className={`${s.skeletonContent} ${s.mb1}`} />
           </div>
         </div>
         <div className={s.skeletonActionRow}>
@@ -57,13 +57,18 @@ const CreateEditSkeleton = () => (
 const ListSkeleton = () => (
   <div className={s.skeletonTable}>
     <div className={s.skeletonTableHeader} />
-    <div className={s.empty} />
-    <div className={s.skeletonTableRow} />
-    <div className={s.empty} />
-    <div className={s.skeletonTableRow} />
-    <div className={s.empty} />
-    <div className={s.skeletonTableRow} />
-    <div className={s.empty} />
+    <div className={s.skeletonTableRow}>
+      <div className={s.skeletonContent} />
+    </div>
+    <div className={s.skeletonTableRow}>
+      <div className={s.skeletonContent} />
+    </div>
+    <div className={s.skeletonTableRow}>
+      <div className={s.skeletonContent} />
+    </div>
+    <div className={s.skeletonTableRow}>
+      <div className={s.skeletonContent} />
+    </div>
   </div>
 );
 

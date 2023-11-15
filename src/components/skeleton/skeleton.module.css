@@ -15,7 +15,6 @@
 
 /* The shine that's going to move across the skeleton: */
 .skeletonTableHeader,
-.skeletonTableRow,
 .skeletonContent,
 .skeletonFullContent,
 .skeletonBtn {
@@ -46,12 +45,8 @@
 
 .skeletonTableRow {
     min-height: 40px;
-    border-radius: .5rem;
-}
-
-.empty {
-    height: 2px;
-    background-color: #fff;
+    padding: .5rem;
+    border-bottom: 1px solid #ccc;
 }
 
 @keyframes shine {
@@ -80,8 +75,11 @@
 .skeletonContent {
     width: 100%;
     height: 32px;
-    margin-bottom: 1rem;
     border-radius: .5rem;
+}
+
+.mb1 {
+    margin-bottom: 1rem;
 }
 
 .content {
