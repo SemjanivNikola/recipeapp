@@ -7,7 +7,7 @@ import s from "../create-recipe/create-recipe-screen.module.css";
 interface RecipeType {
   title: string;
   authorId: string;
-  dateCreated: Date;
+  dateCreated: string;
   instructions: string[];
   tags: string[];
 }
