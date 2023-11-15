@@ -1,34 +1,33 @@
 import { useEffect, useState } from "react";
-import "./toast.css"
+import { useDispatch, useSelector } from "react-redux";
+import { reset, selectToast } from "./slices/toastSlice";
+import "./toast.css";
 
 const SHOW_FEEDBACK_IN_MS = 6000; // 6 seconds
-
-const toast = {
-  type: "success",
-  message: "test message",
-};
 
 const Toast = () => {
   const [animation, setAnimation] = useState("");
 
-  const hasMessage = true;
+  const { message, type } = useSelector(selectToast);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (hasMessage)
+    if (message) {
+      setAnimation("fade-in");
       setTimeout(() => {
         setAnimation("slide-right");
+        dispatch(reset());
       }, SHOW_FEEDBACK_IN_MS);
-    else setAnimation("fade-in");
-  }, [hasMessage]);
+    }
+  }, [message]);
 
-  if (hasMessage)
-    return (
-      <div id="toast" className={`${animation} ${toast.type}`}>
-        {toast.message}
-      </div>
-    );
+  if (!message) return null;
 
-  return null;
+  return (
+    <div id="toast" className={`${animation} ${type}`}>
+      {message}
+    </div>
+  );
 };
 
 export default Toast;
