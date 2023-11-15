@@ -77,7 +77,7 @@ const CreateFormWrapper = () => {
             <ButtonSpinner />
           ) : (
             <button type="submit" className={s.submitBtn}>
-              Update
+              Create
             </button>
           )}
         </div>
