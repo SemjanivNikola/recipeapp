@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import "./toast.css"
 
-const SHOW_FEEDBACK_IN_MS = 2000; // 6 seconds
+const SHOW_FEEDBACK_IN_MS = 6000; // 6 seconds
 
 const toast = {
   type: "success",
