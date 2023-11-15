@@ -1,0 +1,132 @@
+.skeletonTable {
+    width: 100%;
+    box-shadow: 0 5px 10px 0 rgba(#000, .15);
+}
+
+.skeletonTableHeader {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: .5rem;
+    background-color: rgb(111, 189, 102) !important;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* The shine that's going to move across the skeleton: */
+.skeletonTableHeader,
+.skeletonContent,
+.skeletonFullContent,
+.skeletonBtn {
+    background-color: #e2e5e7;
+    background-image: linear-gradient(90deg, #ffffff00, #ffffff50, #ffffff00);
+    /* width of the shine */
+    background-size: 40px 100%;
+    /* No need to repeat the shine effect */
+    background-repeat: no-repeat;
+    /* Place shine on the left side, with offset on the left based on the width of the shine - see background-size */
+    background-position: left -40px top 0;
+    /* increase animation time to see effect in 'slow-mo' */
+    animation: shine 2s ease infinite;
+}
+
+.indexCol {
+    width: 25px;
+    min-width: 25px;
+}
+
+.firstCol {
+    width: 60%;
+}
+
+.secondCol {
+    width: 40%;
+}
+
+.skeletonTableRow {
+    min-height: 40px;
+    padding: .5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+@keyframes shine {
+    to {
+        background-position: right -40px top 0;
+    }
+}
+
+/* SCREEN SKELETON */
+.skeletonScreen {
+    height: 100%;
+}
+
+.skeletonScreenHeader {
+    min-height: 105px;
+    padding: 1.5rem;
+}
+
+.skeletonFullContent {
+    height: 100%;
+    min-height: 57px;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.skeletonContent {
+    width: 100%;
+    height: 32px;
+    border-radius: .5rem;
+}
+
+.mb1 {
+    margin-bottom: 1rem;
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.skeletonForm {
+    max-width: 65%;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.rowJustifyEnd {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    padding-right: 1.5rem;
+}
+
+.w30 {
+    width: 30%;
+}
+.w70 {
+    width: 70%;
+}
+
+.skeletonActionRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3rem;
+}
+
+.skeletonBtn {
+    width: 100px;
+    height: 2rem;
+    border-radius: .5rem;
+}
