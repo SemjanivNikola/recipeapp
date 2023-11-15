@@ -4,12 +4,13 @@ import Skeleton from "@/components/skeleton/Skeleton";
 import { useFetchAllQuery } from "@/store/services/recipeApi";
 import RecipeList from "./RecipeList";
 import s from "./dashboard.module.css";
+import ErrorView from "../error/ErrorView";
 
 const DashboardScreen = () => {
   const { data, error, isFetching } = useFetchAllQuery(null);
 
   if (error) {
-    return <div>Error loading albums.</div>;
+    return <ErrorView />;
   }
 
   return (
