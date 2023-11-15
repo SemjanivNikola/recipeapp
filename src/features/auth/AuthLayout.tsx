@@ -1,3 +1,4 @@
+import Logo from "@/components/logo/Logo";
 import s from "./auth.module.css";
 
 interface AuthLayoutProps {
@@ -10,7 +11,10 @@ const AuthLayout = ({ title, footerText, link, render }: AuthLayoutProps) => {
   return (
     <div id={s.authScreen}>
       <div className={s.formContainer}>
-        <h1 className={s.formTitle}>{title}</h1>
+        <div>
+          <Logo />
+          <h1 className={s.formTitle}>{title}</h1>
+        </div>
         <div style={{ width: "100%" }}>
           {render}
           <span className={s.divider}></span>
