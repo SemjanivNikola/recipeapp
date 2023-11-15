@@ -24,8 +24,8 @@ const ListInput = ({ list, update }: { list: string[]; update: (list: string[]) 
     update(updatedList);
   }
 
-  function onKeyDown(e: any) {
-    if (e.keyCode === 13) {
+  function onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
       e.preventDefault();
       add();
     }
