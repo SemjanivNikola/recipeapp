@@ -1,10 +1,14 @@
 <svg viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
     <rect x="0" y="0" width="900" height="600" fill="url(#LinearGradient1)"></rect>
-    <path fill="#71bc68" d="M0 395L50 389.5C100 384 200 373 300 361.3C400 349.7 500 337.3 600 349.8C700 362.3 800 399.7 850 418.3L900 437L900 601L850 601C800 601 700 601 600 601C500 601 400 601 300 601C200 601 100 601 50 601L0 601Z" stroke-linecap="round" stroke-linejoin="miter"></path>
+    <path fill="url(#LinearGradient2)" d="M0 395L50 389.5C100 384 200 373 300 361.3C400 349.7 500 337.3 600 349.8C700 362.3 800 399.7 850 418.3L900 437L900 601L850 601C800 601 700 601 600 601C500 601 400 601 300 601C200 601 100 601 50 601L0 601Z" stroke-linecap="round" stroke-linejoin="miter"></path>
     <defs>
         <linearGradient x1="0" y1="0" x2="0" y2="1" id="LinearGradient1">
-            <stop stop-color="#8968bc" offset="0"></stop>
+            <stop stop-color="#52796F" offset="35%"></stop>
             <stop stop-color="#fff" offset="100%"></stop>
-      </linearGradient>
+        </linearGradient>
+        <linearGradient x1="0" y1="0" x2="0" y2="1" id="LinearGradient2">
+            <stop stop-color="#2F3E46" offset="65%"></stop>
+            <stop stop-color="#354F52" offset="100%"></stop>
+        </linearGradient>
    </defs>
 </svg>
