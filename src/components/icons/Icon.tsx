@@ -9,7 +9,7 @@ type IconType = {
   color?: string;
 };
 
-const Icon = ({ name, size = DEFAULT_ICON_SIZE, color = "rgb(0, 0, 0)" }: IconType) => {
+const Icon = ({ name, size = DEFAULT_ICON_SIZE, color = "var(--white)" }: IconType) => {
   return <div style={{ width: size + "px", height: size + "px" }}>{getIcon(name, color)}</div>;
 };
 

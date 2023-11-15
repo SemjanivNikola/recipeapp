@@ -10,19 +10,19 @@ const Drawer = () => {
     <div id="drawer" className="relative">
       <div style={{ height: "8rem" }}>Logo</div>
       <NavLink to="/" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
-        <Icon name="dashboard" color="#fff" />
+        <Icon name="dashboard" />
         DASHBOARD
       </NavLink>
       <NavLink to="/my-recipes" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
-        <Icon name="layers" color="#fff" />
+        <Icon name="layers" />
         MY RECIPES
       </NavLink>
       <NavLink to="/create-recipe" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
-        <Icon name="layers-plus" color="#fff" />
+        <Icon name="layers-plus" />
         CREATE RECIPE
       </NavLink>
       <button className="drawer-btn p-m" onClick={() => dispatch(logout())}>
-        <Icon name="signout" color="#fff" />
+        <Icon name="signout" />
         SIGN OUT
       </button>
     </div>

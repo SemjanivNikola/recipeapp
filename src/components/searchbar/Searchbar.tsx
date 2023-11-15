@@ -13,7 +13,7 @@ const Searchbar = () => {
 
   return (
     <div id={s.searchbar}>
-      <Icon name="magnify" />
+      <Icon name="magnify" color="var(--dark)" />
       <div className={s.searchInputWrapper}>
         <input
           value={search}
@@ -27,7 +27,7 @@ const Searchbar = () => {
       </div>
 
       <button className="flex align-center gap-s action" onClick={onClick}>
-        <Icon name="plus" color="#2f3e46" />
+        <Icon name="plus" color="var(--primary-dark)" />
         Create recipe
       </button>
     </div>

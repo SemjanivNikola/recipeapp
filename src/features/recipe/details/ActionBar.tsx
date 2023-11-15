@@ -13,12 +13,12 @@ const ActionBar = ({ recipeId }: { recipeId: string }) => {
       <div className="flex align-center justify-end gap-m mb-m">
         <Link to={`/edit-recipe/${recipeId}`}>
           <button type="button" className="btn-icon transparent">
-            <Icon name="pencil-outline" color="#000" />
+            <Icon name="pencil-outline" color="var(--dark)" />
             Edit
           </button>
         </Link>
         <button type="button" className="btn-icon danger">
-          <Icon name="trash-can-outline" color="#fff" />
+          <Icon name="trash-can-outline" />
           Delete
         </button>
       </div>
