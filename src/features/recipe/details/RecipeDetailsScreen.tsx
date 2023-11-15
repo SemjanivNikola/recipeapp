@@ -34,16 +34,18 @@ const RecipeDetailsScreen = () => {
           </p>
         </div>
         <div className={s.pillWrapper}>
-          {data.tags.map((tag) => (
-            <div className={s.pillTag}>{tag}</div>
+          {data.tags.map((tag, index) => (
+            <div key={index} className={s.pillTag}>
+              {tag}
+            </div>
           ))}
         </div>
         <p>
           <span className={s.pTitle}>Instructions: </span>
         </p>
         <ol className={s.instructionList}>
-          {data.instructions.map((instruction) => (
-            <li>{instruction}</li>
+          {data.instructions.map((instruction, index) => (
+            <li key={index}>{instruction}</li>
           ))}
         </ol>
       </div>
