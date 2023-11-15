@@ -5,13 +5,14 @@ import ActionBar from "./ActionBar";
 import s from "./recipe-details-screen.module.css";
 import ErrorView from "../../error/ErrorView";
 import { formatDateForDisplay } from "../helpers/dateHelper";
+import Skeleton from "@/components/skeleton/Skeleton";
 
 const RecipeDetailsScreen = () => {
   const { recipeId } = useParams<{ recipeId: string }>();
   const { data, error, isFetching } = useFetchByIdQuery(recipeId as string);
 
   if (isFetching) {
-    return <h1>Loading</h1>;
+    return <Skeleton />;
   } else if (error || !data) {
     return <ErrorView error={error} />;
   }
