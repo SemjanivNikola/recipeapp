@@ -30,7 +30,7 @@
     left: 0;
     height: 2px;
     width: 0;
-    background-color: var(--primary);
+    background-color: var(--primary-light);
     -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
