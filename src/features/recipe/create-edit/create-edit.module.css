@@ -9,24 +9,12 @@
     box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
 }
 
-.buttonRow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 2.5rem;
-}
-
 .w30 {
     width: 30%;
 }
 
 .w70 {
     width: 70%;
-}
-
-.transparentBtn {
-    color: var(--danger);
-    background: transparent;
 }
 
 /* ============ LIST INPUT ============ */
@@ -130,12 +118,4 @@
     display: inline-block;
     vertical-align: sub;
     margin-left: var(--s);
-}
-
-/* ============ FIELD ARRAY ============ */
-.iconButtonRow {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--s);
-    padding-top: .85rem;
 }

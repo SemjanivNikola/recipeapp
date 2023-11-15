@@ -1,10 +1,11 @@
-import ButtonSpinner from "@/components/spinner/ButttonSpinner";
+import ButtonLoader from "@/components/button/ButtonLoader";
+import Icon from "@/components/icons/Icon";
 import { Recipe, useDeleteRecipeMutation, useUpdateRecipeMutation } from "@/store/services/recipeApi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selectUser } from "../../auth/slices/authSlice";
-import s from "../create-edit/create-edit.module.css";
 import { formatDateForDisplay } from "../helpers/dateHelper";
+import FormActionBar from "./FormActionBar";
 import RecipeForm from "./RecipeForm";
 
 interface RecipeType {
@@ -70,22 +71,15 @@ const EditFormWrapper = ({ recipe }: { recipe: Recipe }) => {
       staticData={staticData}
       onAPISubmit={onSubmit}
       formActionButtons={
-        <div className={s.buttonRow}>
-          {updateStatus.isLoading ? (
-            <ButtonSpinner />
-          ) : (
-            <button type="submit" className={s.submitBtn}>
-              Update
-            </button>
-          )}
-          {deleteStatus.isLoading ? (
-            <ButtonSpinner />
-          ) : (
-            <button onClick={onDelete} type="button" className={s.transparentBtn}>
-              Delete
-            </button>
-          )}
-        </div>
+        <FormActionBar title="Update" status={updateStatus.isLoading}>
+          <ButtonLoader
+            title="Delete"
+            status={deleteStatus.isLoading}
+            type="transparent-danger"
+            onClick={onDelete}
+            icon={<Icon name="trash-can-outline" color="var(--danger)" />}
+          />
+        </FormActionBar>
       }
     />
   );

@@ -72,6 +72,7 @@ button.btn-icon {
 }
 
 button.action, button.btn-icon {
+  min-height: 40px;
   color: var(--primary-dark);
   background-color: var(--action);
 }
@@ -113,5 +114,14 @@ button.action.danger:hover svg, button.btn-icon.danger:hover svg {
   fill: var(--danger);
 }
 
+/* =========== button - TRANSPARENT DANGER =========== */
+button.btn-icon.transparent-danger {
+  color: var(--danger);
+  background: transparent;
+}
+
+button.btn-icon.transparent-danger:hover {
+  border-color: var(--danger);
+}
 
 /* =========== Drawer =========== */
