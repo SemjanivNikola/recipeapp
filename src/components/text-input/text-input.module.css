@@ -9,6 +9,8 @@ input.textInput {
     background-color: var(--white);
     color: var(--dark);
     padding-top: var(--s);
+    padding-left: var(--xs);
+    padding-right: var(--xs);
 }
 
 .focusIndicator {
@@ -43,8 +45,8 @@ input.textInput:focus ~ .focusIndicator {
 }
 
 .inputError {
-    height: 1rem;
-    font-size: .75rem;
+    height: var(--m);
+    font-size: var(--font-xs);
     font-weight: 500;
-    color: rgb(239 68 68);
+    color: var(--danger);
 }

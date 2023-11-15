@@ -17,6 +17,20 @@
     width: 70%;
 }
 
+.label {
+    text-transform: uppercase;
+    font-size: var(--font-xs);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin: var(--m) 0;
+    background-color: var(--gray-tone);
+}
+
 /* ============ LIST INPUT ============ */
 .listTextInput {
     width: 100%;

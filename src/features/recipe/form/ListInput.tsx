@@ -2,7 +2,7 @@ import Icon from "@/components/icons/Icon";
 import { ChangeEvent, useState } from "react";
 import s from "../create-edit/create-edit.module.css";
 
-const ListInput = ({ list, update }: { list: string[]; update: (list: string[]) => void }) => {
+const ListInput = ({ list, label, update }: { list: string[]; label: string; update: (list: string[]) => void }) => {
   const [value, setValue] = useState("");
   const [localList, setLocalList] = useState(list);
 
@@ -33,6 +33,7 @@ const ListInput = ({ list, update }: { list: string[]; update: (list: string[]) 
 
   return (
     <>
+      <p className={s.label}>{label}</p>
       <div className="flex align-center gap-m">
         <div className="relative mb-s grow">
           <input value={value} onChange={onChange} className={s.listTextInput} onKeyDown={onKeyDown} />

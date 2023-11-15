@@ -20,7 +20,7 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
         <label
           id={`${otherProps.name}-label`}
           htmlFor={otherProps.name}
-          className={`${s.inputLabel} absolute px-s`}
+          className={`${s.inputLabel} absolute`}
           style={{ transform: "translateY(-50%)" }}
         >
           {label}
