@@ -33,20 +33,20 @@ const ListInput = ({ list, update }: { list: string[]; update: (list: string[]) 
 
   return (
     <>
-      <div className={s.row}>
+      <div className="flex align-center gap-m">
         <div className="relative mb-s grow">
           <input value={value} onChange={onChange} className={s.listTextInput} onKeyDown={onKeyDown} />
           <span className={s.focusIndicator}></span>
         </div>
         <button onClick={add} className={s.iconButton} type="button">
-          <Icon name="plus" size={18} color="#fff" />
+          <Icon name="plus" size={18} color="var(--white)" />
         </button>
       </div>
       <ul className={s.valueList}>
         {localList.map((item, index) => (
           <li key={index} onClick={() => deleteItem(index)}>
             {item}
-            <Icon name="trash-can-outline" size={18} color="#fff" />
+            <Icon name="trash-can-outline" size={18} />
           </li>
         ))}
       </ul>
