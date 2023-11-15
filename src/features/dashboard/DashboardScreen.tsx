@@ -13,13 +13,13 @@ const DashboardScreen = () => {
   }
 
   return (
-    <>
+    <div style={{ height: "inherit", overflowY: "scroll" }}>
       <ScreenHeader title="Dashboard" />
-      <div className="p-lg" style={{ overflowY: "scroll" }}>
+      <div className="p-lg">
         <Searchbar />
         {isFetching ? <Skeleton.List /> : <RecipeList list={data} />}
       </div>
-    </>
+    </div>
   );
 };
 
