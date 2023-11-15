@@ -26,7 +26,7 @@ const Searchbar = () => {
         <span className={s.focusIndicator}></span>
       </div>
 
-      <button className="flex align-center action" onClick={onClick}>
+      <button className="flex align-center gap-s action" onClick={onClick}>
         <Icon name="plus" color="#2f3e46" />
         Create recipe
       </button>
