@@ -1,6 +1,4 @@
-.logoWeapper {
-    width: 256px;
-}
+
 
 .smallLogoWrapper {
     width: 116px;
@@ -11,4 +9,16 @@
 .logoWeapper img, .smallLogoWrapper img {
     width: 100%;
     height: auto;
+}
+
+@media (min-width: 576px) {
+    .logoWeapper {
+        width: 256px;
+    }
+}
+@media (max-width: 576px) {
+    .logoWeapper {
+        width: 156px;
+        margin: 0 auto;
+    }
 }
