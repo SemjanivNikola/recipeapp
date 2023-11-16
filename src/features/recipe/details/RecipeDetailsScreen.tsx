@@ -20,9 +20,9 @@ const RecipeDetailsScreen = () => {
   const dateCreated = formatDateForDisplay(new Date(data.dateCreated));
 
   return (
-    <>
+    <div className="screen-wrapper list">
       <ScreenHeader title={data.title} />
-      <div className="p-lg">
+      <div className="details-screen-p">
         <ActionBar recipeId={recipeId as string} />
         <div className={`${s.card} mb-m p-m`}>
           <p className="mb-m">
@@ -50,7 +50,7 @@ const RecipeDetailsScreen = () => {
           ))}
         </ol>
       </div>
-    </>
+    </div>
   );
 };
 

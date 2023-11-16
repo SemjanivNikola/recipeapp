@@ -218,4 +218,9 @@ button.btn-icon.transparent-danger:hover {
     flex-direction: column;
     gap: var(--xl)!important;
   }
+
+  /* recipe details screen */
+  .details-screen-p {
+    padding: var(--m);
+  }
 }
