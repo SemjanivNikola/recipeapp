@@ -1,11 +1,3 @@
-
-
-.smallLogoWrapper {
-    width: 116px;
-    margin: 0 auto var(--m) auto;
-    padding: var(--lg);
-}
-
 .logoWeapper img, .smallLogoWrapper img {
     width: 100%;
     height: auto;
@@ -15,10 +7,22 @@
     .logoWeapper {
         width: 256px;
     }
+
+    .smallLogoWrapper {
+        width: 116px;
+        margin: 0 auto var(--m) auto;
+        padding: var(--lg);
+    }
 }
 @media (max-width: 576px) {
     .logoWeapper {
         width: 156px;
         margin: 0 auto;
+    }
+
+    .smallLogoWrapper {
+        width: var(--3xl);
+        margin: 0 0 var(--lg) 0;
+        padding: var(--s);
     }
 }
