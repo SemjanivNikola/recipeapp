@@ -3,8 +3,8 @@ import Skeleton from "@/components/skeleton/Skeleton";
 import { useFetchByIdQuery } from "@/store/services/recipeApi";
 import { useParams } from "react-router-dom";
 import ErrorView from "../../error/ErrorView";
-import { formatDateForDisplay } from "../helpers/dateHelper";
 import ActionBar from "./ActionBar";
+import AuthorDetails from "./AuthorDetails";
 import s from "./recipe-details-screen.module.css";
 
 const RecipeDetailsScreen = () => {
@@ -17,23 +17,12 @@ const RecipeDetailsScreen = () => {
     return <ErrorView error={error} />;
   }
 
-  const dateCreated = formatDateForDisplay(new Date(data.dateCreated));
-
   return (
-    <>
+    <div className="screen-wrapper list">
       <ScreenHeader title={data.title} />
-      <div className="p-lg">
+      <div className="details-screen-p">
         <ActionBar recipeId={recipeId as string} />
-        <div className={`${s.card} mb-m p-m`}>
-          <p className="mb-m">
-            <span className={s.pTitle}>Author: </span>
-            {data.authorId}
-          </p>
-          <p>
-            <span className={s.pTitle}>Created: </span>
-            {dateCreated}
-          </p>
-        </div>
+        <AuthorDetails authorId={data.authorId} date={data.dateCreated} />
         <div className="flex gap-m mb-m">
           {data.tags.map((tag, index) => (
             <div key={index} className={s.pillTag}>
@@ -50,7 +39,7 @@ const RecipeDetailsScreen = () => {
           ))}
         </ol>
       </div>
-    </>
+    </div>
   );
 };
 

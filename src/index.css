@@ -92,21 +92,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/**      COLOR SCHEME        **/
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #291f38;
-    color: #8968bc;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 /* ================================ */
 /*            POSITION              */
 /* ================================ */

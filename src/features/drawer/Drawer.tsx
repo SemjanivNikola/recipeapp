@@ -1,14 +1,18 @@
 import Icon from "@/components/icons/Icon";
+import Logo from "@/components/logo/Logo";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { logout } from "../auth/slices/authSlice";
-import Logo from "@/components/logo/Logo";
+import DrawerLarge from "./DrawerLarge";
+import DrawerSmall from "./DrawerSmall";
 
-const Drawer = () => {
+const INITIAL_SIZE = window.innerWidth > 756;
+
+const BaseDrawer = () => {
   const dispatch = useDispatch();
-
   return (
-    <div id="drawer" className="relative">
+    <div className="relative">
       <Logo small />
       <NavLink to="/" className={({ isActive }) => (isActive ? "active " : "") + "drawer-link p-m"}>
         <Icon name="dashboard" />
@@ -27,6 +31,36 @@ const Drawer = () => {
         SIGN OUT
       </button>
     </div>
+  );
+};
+
+const Drawer = () => {
+  const [isLarge, setIsLarge] = useState(INITIAL_SIZE);
+
+  const handleResize = useCallback(() => {
+    if (window.innerWidth > 756) setIsLarge(true);
+    else setIsLarge(false);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
+  return (
+    <>
+      {isLarge ? (
+        <DrawerLarge>
+          <BaseDrawer />
+        </DrawerLarge>
+      ) : (
+        <DrawerSmall>
+          <BaseDrawer />
+        </DrawerSmall>
+      )}
+    </>
   );
 };
 

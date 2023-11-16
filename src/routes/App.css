@@ -5,9 +5,6 @@
 
 #main {
   height: inherit;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .screen {
@@ -15,18 +12,28 @@
   height: inherit;
 }
 
+.screen-wrapper {
+  height: inherit;
+  overflow-y: scroll;
+  background-color: var(--gray-tone);
+}
+
+.screen-wrapper.list {
+  background-color: var(--white);
+}
+
 /* =========== Drawer =========== */
 #drawer {
-  width: 18%;
-  height: inherit;
-  max-width: 350px;
   flex-shrink: 0;
   color: var(--white);
-  border-radius: 0 var(--border-radius) var(--border-radius) 0;
   background-color: var(--primary-dark);
   -webkit-box-shadow: 5px 5px 22px -15px var(--shadow);
   -moz-box-shadow: 5px 5px 22px -15px var(--shadow);
   box-shadow: 5px 5px 22px -15px var(--shadow);
+}
+
+#drawer div.relative {
+  min-height: 100svh;
 }
 
 a.drawer-link,
@@ -34,7 +41,7 @@ button.drawer-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: .5rem;
+  gap: 0.5rem;
   letter-spacing: 1.6px;
   font-weight: 700;
   font-size: var(--font-s);
@@ -66,7 +73,7 @@ button.drawer-btn {
 
 /* =========== BUTTON =========== */
 button[type="submit"] {
-  min-width: 140px!important;
+  min-width: 140px !important;
 }
 
 button.btn-icon {
@@ -75,51 +82,60 @@ button.btn-icon {
   gap: var(--s);
 }
 
-button.action, button.btn-icon {
+button.action,
+button.btn-icon {
   min-height: 40px;
   color: var(--primary-dark);
   background-color: var(--action);
 }
 
-button.action:disabled, button.btn-icon:disabled {
+button.action:disabled,
+button.btn-icon:disabled {
   cursor: unset;
   pointer-events: none;
 }
 
-button.action:hover, button.btn-icon:hover {
+button.action:hover,
+button.btn-icon:hover {
   background-color: var(--white);
   border-color: var(--action);
 }
 
 /* =========== button - TRANSPARENT =========== */
-button.action.transparent, button.btn-icon.transparent {
+button.action.transparent,
+button.btn-icon.transparent {
   color: var(--primary-dark);
   background: transparent;
 }
 
-button.action.transparent:hover, button.btn-icon.transparent:hover {
+button.action.transparent:hover,
+button.btn-icon.transparent:hover {
   color: var(--white);
   background-color: var(--primary);
   border-color: transparent;
 }
 
-button.action.transparent:hover svg, button.btn-icon.transparent:hover svg {
+button.action.transparent:hover svg,
+button.btn-icon.transparent:hover svg {
   fill: var(--white);
 }
 
 /* =========== button - DANGER =========== */
-button.action.danger, button.btn-icon.danger {
+button.action.danger,
+button.btn-icon.danger {
   color: var(--white);
   background-color: var(--danger);
 }
 
-button.action.danger:hover, button.btn-icon.danger:hover {
+button.action.danger:hover,
+button.btn-icon.danger:hover {
   color: var(--danger);
   border-color: var(--danger);
   background: transparent;
 }
 
-button.action.danger:hover svg, button.btn-icon.danger:hover svg {
+button.action.danger:hover svg,
+button.btn-icon.danger:hover svg {
   fill: var(--danger);
 }
 
@@ -134,3 +150,82 @@ button.btn-icon.transparent-danger:hover {
 }
 
 /* =========== Drawer =========== */
+@media (min-width: 756px) {
+  #main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  #drawer {
+    width: 18%;
+    min-width: 200px;
+    height: inherit;
+    max-width: 350px;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+
+  .screen-wrapper {
+    max-height: 100vh;
+  }
+
+  .details-screen-p {
+    padding: var(--lg);
+  }
+}
+
+@media (max-width: 756px) {
+  #main {
+    display: block;
+    padding-top: 88px;
+  }
+
+  #drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 100svw;
+    overflow: hidden;
+    border-radius: 0;
+    z-index: 10000000;
+    transition: height 300ms ease-in-out;
+  }
+
+  #drawer.close {
+    height: 88px;
+  }
+
+  #drawer.open {
+    height: 100%;
+  }
+
+  .screen-wrapper {
+    max-height: calc(100svh - 88px);
+  }
+
+  .screen .p-lg {
+    padding: var(--m) 0 0 0;
+  }
+
+  /* table-list module */
+  button.fab-small {
+    position: absolute;
+    bottom: var(--lg);
+    right: var(--lg);
+    -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  }
+
+  /* edit-create module */
+  .form-flex {
+    flex-direction: column;
+    gap: var(--xl) !important;
+  }
+
+  /* recipe details screen */
+  .details-screen-p {
+    padding: var(--m);
+  }
+}

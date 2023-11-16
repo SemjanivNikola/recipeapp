@@ -41,7 +41,7 @@ const RecipeForm = ({ initialValues, staticData, onAPISubmit, formActionButtons 
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)} className={s.form}>
-        <div className="flex gap-m">
+        <div className="form-flex flex gap-m">
           <div className={s.w30}>
             {/* Author and date can not be modified */}
             <p className="mb-s">
