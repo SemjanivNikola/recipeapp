@@ -27,11 +27,20 @@ export const userApi = api.injectEndpoints({
         body,
       }),
     }),
+    userDetails: build.query<User, string>({
+      query: (userId) => ({
+        url: env.GET_USER_URL,
+        method: "GET",
+        params: { appUserId: userId },
+      }),
+      transformResponse: (response: { appUser: User }) => response.appUser,
+      providesTags: (result) => [{ type: "User", id: result?.id }],
+    }),
   }),
 });
 
-export const { useLoginMutation, useRegisterMutation } = userApi;
+export const { useLoginMutation, useRegisterMutation, useUserDetailsQuery } = userApi;
 
 export const {
-  endpoints: { login, register },
+  endpoints: { login, register, userDetails },
 } = userApi;
