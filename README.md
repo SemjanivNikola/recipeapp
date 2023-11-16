@@ -25,14 +25,12 @@ Test user credentials:
 
 # Content table
     1. Description
-    2. Struktura projekta
-    3. Kako koristiti projekt?
-        1. Smjernice
-            - Komunikacija sa serverom i vanjskim servisima
-            - Stiliziranje komponenata
-            - Form Builder
-            - ENV
-        2. Pokretanje lokalno
+      - Key Features
+    2. Libraries and Frameworks
+    3. How to use project?
+        - ENV
+        1. SETUP DEV ENVIRONMENT
+        2. BUILD PROJECT
 
 <br>
 
