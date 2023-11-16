@@ -63,7 +63,7 @@ button.drawer-btn {
 
 /* =========== BUTTON =========== */
 button[type="submit"] {
-  min-width: 140px!important;
+  min-width: 140px !important;
 }
 
 button.btn-icon {
@@ -72,51 +72,60 @@ button.btn-icon {
   gap: var(--s);
 }
 
-button.action, button.btn-icon {
+button.action,
+button.btn-icon {
   min-height: 40px;
   color: var(--primary-dark);
   background-color: var(--action);
 }
 
-button.action:disabled, button.btn-icon:disabled {
+button.action:disabled,
+button.btn-icon:disabled {
   cursor: unset;
   pointer-events: none;
 }
 
-button.action:hover, button.btn-icon:hover {
+button.action:hover,
+button.btn-icon:hover {
   background-color: var(--white);
   border-color: var(--action);
 }
 
 /* =========== button - TRANSPARENT =========== */
-button.action.transparent, button.btn-icon.transparent {
+button.action.transparent,
+button.btn-icon.transparent {
   color: var(--primary-dark);
   background: transparent;
 }
 
-button.action.transparent:hover, button.btn-icon.transparent:hover {
+button.action.transparent:hover,
+button.btn-icon.transparent:hover {
   color: var(--white);
   background-color: var(--primary);
   border-color: transparent;
 }
 
-button.action.transparent:hover svg, button.btn-icon.transparent:hover svg {
+button.action.transparent:hover svg,
+button.btn-icon.transparent:hover svg {
   fill: var(--white);
 }
 
 /* =========== button - DANGER =========== */
-button.action.danger, button.btn-icon.danger {
+button.action.danger,
+button.btn-icon.danger {
   color: var(--white);
   background-color: var(--danger);
 }
 
-button.action.danger:hover, button.btn-icon.danger:hover {
+button.action.danger:hover,
+button.btn-icon.danger:hover {
   color: var(--danger);
   border-color: var(--danger);
   background: transparent;
 }
 
-button.action.danger:hover svg, button.btn-icon.danger:hover svg {
+button.action.danger:hover svg,
+button.btn-icon.danger:hover svg {
   fill: var(--danger);
 }
 
@@ -173,5 +182,17 @@ button.btn-icon.transparent-danger:hover {
   #drawer.open {
     height: 100%;
   }
-}
 
+  .screen .p-lg {
+    padding: var(--m) 0 0 0;
+  }
+
+  button.fab-small {
+    position: absolute;
+    bottom: var(--lg);
+    right: var(--lg);
+    -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
+  }
+}
