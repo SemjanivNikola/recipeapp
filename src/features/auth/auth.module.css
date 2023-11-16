@@ -58,7 +58,7 @@
     .formContainer {
         width: 480px;
         gap: var(--xl);
-        padding: var(--xl) var(--3xl);
+        padding: var(--xl) var(--2xl);
     }
 }
 
