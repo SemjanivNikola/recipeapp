@@ -31,3 +31,9 @@ tr {
 tr:hover {
     background-color: var(--gray-tone);
 }
+
+@media (max-width: 756px) {
+    .tableList {
+        margin-bottom: var(--3xl)
+    }
+  }

@@ -1,20 +1,9 @@
 .form {
-    max-width: 65%;
-    margin: var(--lg) auto;
     padding: var(--m);
-    border-radius: var(--border-radius);
     background-color: var(--white);
     -webkit-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     -moz-box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
     box-shadow: 5px 5px 22px -15px rgba(0, 0, 0, 0.8);
-}
-
-.w30 {
-    width: 30%;
-}
-
-.w70 {
-    width: 70%;
 }
 
 .label {
@@ -132,4 +121,32 @@
     display: inline-block;
     vertical-align: sub;
     margin-left: var(--s);
+}
+
+@media (min-width: 756px) {
+    .form {
+        max-width: 65%;
+        margin: var(--lg) auto;
+        border-radius: var(--border-radius);
+    }
+
+    .w30 {
+        width: 30%;
+    }
+    
+    .w70 {
+        width: 70%;
+    }
+}
+
+@media (max-width: 756px) {
+    .form {
+        width: 100%;
+        margin-top: -1rem;
+        border-radius: 0;
+    }
+    
+    .w30, .w70 {
+        width: 100%;
+    }
 }

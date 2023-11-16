@@ -2,8 +2,8 @@ import ScreenHeader from "@/components/screen-header/ScreenHeader";
 import Searchbar from "@/components/searchbar/Searchbar";
 import Skeleton from "@/components/skeleton/Skeleton";
 import { useFetchAllQuery } from "@/store/services/recipeApi";
-import RecipeList from "./RecipeList";
 import ErrorView from "../error/ErrorView";
+import RecipeList from "./RecipeList";
 
 const DashboardScreen = () => {
   const { data, error, isFetching } = useFetchAllQuery(null);
@@ -13,7 +13,7 @@ const DashboardScreen = () => {
   }
 
   return (
-    <div style={{ height: "inherit", overflowY: "scroll" }}>
+    <div className="screen-wrapper list">
       <ScreenHeader title="Dashboard" />
       <div className="p-lg">
         <Searchbar />

@@ -41,3 +41,9 @@
 .searchInput:focus+.focusIndicator {
     width: 100%;
 }
+
+@media (max-width: 756px) {
+    #searchbar {
+        padding: 0 var(--m);
+    }
+}
