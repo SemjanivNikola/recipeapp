@@ -72,18 +72,16 @@ button.drawer-btn {
 }
 
 /* =========== BUTTON =========== */
-button[type="submit"] {
-  min-width: 140px !important;
-}
-
 button.btn-icon {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--s);
 }
 
 button.action,
 button.btn-icon {
+  min-width: 140px !important;
   min-height: 40px;
   color: var(--primary-dark);
   background-color: var(--action);
