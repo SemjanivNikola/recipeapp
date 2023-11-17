@@ -27,5 +27,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", ".eslintrc.cjs", "vite.config.ts"]
+  "exclude": ["node_modules", ".eslintrc.cjs", "cypress.config.ts"]
 }
