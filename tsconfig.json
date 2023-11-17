@@ -27,6 +27,6 @@
       "@cy/*": ["cypress/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "./cypress.d.ts"],
   "exclude": ["node_modules", ".eslintrc.cjs", "cypress.config.ts"]
 }
