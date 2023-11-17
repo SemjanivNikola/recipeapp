@@ -67,6 +67,12 @@
     border: 1px solid var(--primary);
 }
 
+.iconButton:disabled {
+    background-color: var(--primary-light);
+    border: 1px solid var(--primary-light);
+    pointer-events: none;
+}
+
 .iconButtonDanger {
     background-color: var(--danger);
     border: 1px solid var(--danger);
