@@ -9,16 +9,13 @@
 
 input.textInput {
     width: 100%;
-    height: 36px;
     outline: none;
     border: none;
     font-size: var(--font-m);
     appearance: none;
     background: inherit;
     color: var(--dark);
-    padding-top: var(--s);
-    padding-left: var(--xs);
-    padding-right: var(--xs);
+    padding: var(--s) var(--xs);
 }
 
 .focusIndicator {
@@ -54,7 +51,7 @@ input.textInput:focus ~ .focusIndicator {
 }
 
 .inputError {
-    height: var(--m);
+    padding-top: var(--s);
     font-size: var(--font-xs);
     font-weight: 500;
     color: var(--danger);
