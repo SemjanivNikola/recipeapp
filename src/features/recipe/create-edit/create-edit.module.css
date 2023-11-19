@@ -39,6 +39,10 @@
     padding-top: var(--s);
 }
 
+.listTextInput::placeholder {
+    color: var(--gray);
+}
+
 .focusIndicator {
     display: block;
     position: absolute;
