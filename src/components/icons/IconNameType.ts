@@ -12,6 +12,7 @@ type IconName =
   | "plus"
   | "signout"
   | "user-outline"
+  | "format-title"
   | "trash-can-outline";
 
 export default IconName;

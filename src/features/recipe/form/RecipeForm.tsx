@@ -63,6 +63,7 @@ const RecipeForm = ({ initialValues, staticData, onAPISubmit, formActionButtons 
                   type="text"
                   label="Title"
                   isFocused
+                  icon="format-title"
                   error={methods.formState.errors?.title?.message}
                   {...props}
                 />
