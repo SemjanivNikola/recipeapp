@@ -41,6 +41,7 @@ const RegisterForm = () => {
             type="text"
             label="Full Name"
             autoComplete="false"
+            icon="user-outline"
             isFocused
             error={formState.errors?.email?.message}
             {...props}
@@ -59,6 +60,7 @@ const RegisterForm = () => {
             type="email"
             label="Email"
             autoComplete="email"
+            icon="email-outline"
             error={formState.errors?.email?.message}
             {...props}
           />
@@ -77,7 +79,13 @@ const RegisterForm = () => {
           },
         }}
         render={({ field: props }) => (
-          <TextInput type="password" label="Password" error={formState.errors?.password?.message} {...props} />
+          <TextInput
+            type="password"
+            label="Password"
+            icon="lock-outline"
+            error={formState.errors?.password?.message}
+            {...props}
+          />
         )}
       />
 
