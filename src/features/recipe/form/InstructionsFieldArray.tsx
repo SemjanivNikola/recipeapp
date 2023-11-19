@@ -16,11 +16,15 @@ const InstructionsFieldArray = ({ label }: { label: string }) => {
         {fields.map((field, index) => (
           <li key={field.id} className="flex gap-s">
             <div className="relative mb-s grow">
-              <input {...register(`instructions.${index}`)} className={s.listTextInput} />
+              <input
+                {...register(`instructions.${index}`)}
+                placeholder="Try: Let it cook"
+                className={s.listTextInput}
+              />
               <span className={s.focusIndicator}></span>
             </div>
             <div className="flex align-center gap-s" style={{ paddingTop: "var(--m)" }}>
-              <button type="button" onClick={() => append("Type instructions here")} className={s.iconButton}>
+              <button type="button" onClick={() => append("")} className={s.iconButton}>
                 <Icon name="plus" size={18} />
               </button>
               <button type="button" onClick={() => remove(index)} className={s.iconButtonDanger}>
