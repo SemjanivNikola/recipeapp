@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
+import Icon from "../icons/Icon";
 import TextInputProps from "./TextInputProps";
 import s from "./text-input.module.css";
-import Icon from "../icons/Icon";
 
 const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function TextInput(
   { label, isFocused = false, error, autoComplete, icon, ...otherProps },
@@ -9,7 +9,7 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
 ) {
   return (
     <div className="relative mb-m text-start">
-      <div className={s.inputWrapper}>
+      <div className={s.inputWrapper} aria-error={!!error}>
         <Icon name={icon} color="var(--black)" />
         <input
           id={otherProps.name}
@@ -22,7 +22,7 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
         <label
           id={`${otherProps.name}-label`}
           htmlFor={otherProps.name}
-          className={`${s.inputLabel} absolute`}
+          className={s.inputLabel}
           style={{ transform: "translateY(-50%)" }}
         >
           {label}

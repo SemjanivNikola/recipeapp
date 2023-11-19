@@ -56,3 +56,21 @@ input.textInput:focus ~ .focusIndicator {
     font-weight: 500;
     color: var(--danger);
 }
+
+.inputWrapper[aria-error="true"] input.textInput {
+    color: var(--danger);
+}
+
+.inputWrapper[aria-error="true"] .inputLabel,
+.inputWrapper[aria-error="true"] input.textInput:focus + .inputLabel {
+    color: var(--danger);
+  }
+
+  .inputWrapper[aria-error="true"] .focusIndicator {
+    background-color: var(--danger);
+  }
+
+  .inputWrapper[aria-error="true"] svg {
+    fill: var(--danger);
+  }
+  
