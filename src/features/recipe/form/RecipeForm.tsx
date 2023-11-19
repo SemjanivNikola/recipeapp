@@ -1,8 +1,9 @@
 import TextInput from "@/components/text-input/TextInput";
 import { Controller, FormProvider, useForm } from "react-hook-form";
+import s from "../create-edit/create-edit.module.css";
 import InstructionsFieldArray from "./InstructionsFieldArray";
 import ListInput from "./ListInput";
-import s from "../create-edit/create-edit.module.css";
+import filterEmptyValues from "../helpers/filterEmptyValues";
 
 interface RecipeType {
   title: string;
@@ -29,6 +30,7 @@ const RecipeForm = ({ initialValues, staticData, onAPISubmit, formActionButtons 
   });
 
   const onSubmit = async (data: RecipeType) => {
+    data.instructions = filterEmptyValues(data.instructions);
     onAPISubmit(data, methods.reset);
   };
 
