@@ -1,4 +1,5 @@
 import { ChangeEvent, InputHTMLAttributes } from "react";
+import IconName from "../icons/IconNameType";
 
 type TextInputProps = {
   name: string;
@@ -11,6 +12,7 @@ type TextInputProps = {
   label: string;
   onBlur?: () => void;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  icon: IconName;
 };
 
 export default TextInputProps;

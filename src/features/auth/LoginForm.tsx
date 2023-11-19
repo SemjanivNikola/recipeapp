@@ -49,6 +49,7 @@ const LoginForm = () => {
             type="email"
             label="Email"
             autoComplete="email"
+            icon="email-outline"
             isFocused
             error={formState.errors?.email?.message}
             {...props}
@@ -63,7 +64,13 @@ const LoginForm = () => {
           required: true,
         }}
         render={({ field: props }) => (
-          <TextInput type="password" label="Password" error={formState.errors?.password?.message} {...props} />
+          <TextInput
+            type="password"
+            label="Password"
+            icon="lock-outline"
+            error={formState.errors?.password?.message}
+            {...props}
+          />
         )}
       />
 
