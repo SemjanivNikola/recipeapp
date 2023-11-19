@@ -57,20 +57,20 @@ input.textInput:focus ~ .focusIndicator {
     color: var(--danger);
 }
 
-.inputWrapper[aria-error="true"] input.textInput {
+.inputWrapper[data-error="true"] input.textInput {
     color: var(--danger);
 }
 
-.inputWrapper[aria-error="true"] .inputLabel,
-.inputWrapper[aria-error="true"] input.textInput:focus + .inputLabel {
+.inputWrapper[data-error="true"] .inputLabel,
+.inputWrapper[data-error="true"] input.textInput:focus + .inputLabel {
     color: var(--danger);
   }
 
-  .inputWrapper[aria-error="true"] .focusIndicator {
+  .inputWrapper[data-error="true"] .focusIndicator {
     background-color: var(--danger);
   }
 
-  .inputWrapper[aria-error="true"] svg {
+  .inputWrapper[data-error="true"] svg {
     fill: var(--danger);
   }
   

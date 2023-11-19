@@ -9,7 +9,7 @@ const TextInput = forwardRef<HTMLInputElement | null, TextInputProps>(function T
 ) {
   return (
     <div className="relative mb-m text-start">
-      <div className={s.inputWrapper} aria-error={!!error}>
+      <div className={s.inputWrapper} data-error={!!error}>
         <Icon name={icon} color="var(--black)" />
         <input
           id={otherProps.name}
