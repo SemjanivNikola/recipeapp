@@ -3,6 +3,7 @@ type IconName =
   | "chevron-left"
   | "chevron-right"
   | "dashboard"
+  | "email-outline"
   | "layers-plus"
   | "layers"
   | "magnify"
