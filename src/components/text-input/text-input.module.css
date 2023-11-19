@@ -1,12 +1,20 @@
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--s);
+    border-bottom: 2px solid var(--gray);
+    background-color: var(--white);
+}
+
 input.textInput {
     width: 100%;
     height: 36px;
     outline: none;
     border: none;
     font-size: var(--font-m);
-    border-bottom: 2px solid var(--gray);
     appearance: none;
-    background-color: var(--white);
+    background: inherit;
     color: var(--dark);
     padding-top: var(--s);
     padding-left: var(--xs);
@@ -24,10 +32,17 @@ input.textInput {
     transition: width 150ms ease-in-out;
 }
 
+.inputLabel {
+    top: 50%;
+    left: 36px;
+    transition: all 150ms ease-out;
+}
+
 input.textInput:focus + .inputLabel,
 input.textInput:not([value=""]) + .inputLabel {
-    top: 0;
-    font-size: var(--font-s);
+    top: -0.25rem;
+    left: 0;
+    font-size: var(--font-xs);
 }
 
 input.textInput:focus + .inputLabel {
@@ -36,12 +51,6 @@ input.textInput:focus + .inputLabel {
 
 input.textInput:focus ~ .focusIndicator {
     width: 100%;
-}
-
-.inputLabel {
-    top: 50%;
-    left: 0;
-    transition: all 150ms ease-out;
 }
 
 .inputError {
