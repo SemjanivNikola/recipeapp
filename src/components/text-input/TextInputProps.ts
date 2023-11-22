@@ -16,5 +16,5 @@ export type SimpleInputProps = {
   children?: React.ReactElement;
 };
 
-export type PasswordInputProps = SimpleInputProps;
+export type PasswordInputProps = Omit<SimpleInputProps, "type">;
 export type TextInputProps = Omit<SimpleInputProps, "children">;
