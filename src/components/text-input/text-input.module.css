@@ -36,18 +36,18 @@ input.textInput {
     transition: all 150ms ease-out;
 }
 
-input.textInput:focus + .inputLabel,
-input.textInput:not([value=""]) + .inputLabel {
+input.textInput:focus+.inputLabel,
+input.textInput:not([value=""])+.inputLabel {
     top: -0.25rem;
     left: 0;
     font-size: var(--font-xs);
 }
 
-input.textInput:focus + .inputLabel {
+input.textInput:focus+.inputLabel {
     color: var(--primary-light);
 }
 
-input.textInput:focus ~ .focusIndicator {
+input.textInput:focus~.focusIndicator {
     width: 100%;
 }
 
@@ -63,15 +63,20 @@ input.textInput:focus ~ .focusIndicator {
 }
 
 .inputWrapper[data-error="true"] .inputLabel,
-.inputWrapper[data-error="true"] input.textInput:focus + .inputLabel {
+.inputWrapper[data-error="true"] input.textInput:focus+.inputLabel {
     color: var(--danger);
-  }
+}
 
-  .inputWrapper[data-error="true"] .focusIndicator {
+.inputWrapper[data-error="true"] .focusIndicator {
     background-color: var(--danger);
-  }
+}
 
-  .inputWrapper[data-error="true"] svg {
+.inputWrapper[data-error="true"] svg {
     fill: var(--danger);
-  }
-  
+}
+
+.togglePassTypeBtn {
+    border: none;
+    outline: none!important;
+    background: transparent;
+}
