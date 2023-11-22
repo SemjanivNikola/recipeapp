@@ -15,6 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
+import "../../src/index.css";
+import "../../src/routes/App.css";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -36,6 +38,8 @@ Cypress.Commands.add("mount", (component, options = {}) => {
 
   return mount(wrapped, mountOptions);
 });
+
+// TODO: Create get method that finds and return element on UI by data-cy 
 
 // Example use:
 // cy.mount(<MyComponent />)
