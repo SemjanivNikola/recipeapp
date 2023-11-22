@@ -11,7 +11,7 @@ const SimpleInput = forwardRef<HTMLInputElement | null, SimpleInputProps>(functi
     <div className={s.inputWrapper} data-error={!!error}>
       <Icon name={icon} color="var(--black)" />
       <input id={otherProps.name} ref={ref} autoFocus={isFocused} className={s.textInput} {...otherProps} />
-      {children}
+      {/* Label element needs to be next to input element so css selector can find it in order to animate */}
       <label
         id={`${otherProps.name}-label`}
         htmlFor={otherProps.name}
@@ -20,6 +20,7 @@ const SimpleInput = forwardRef<HTMLInputElement | null, SimpleInputProps>(functi
       >
         {label}
       </label>
+      {children}
       <span className={s.focusIndicator}></span>
     </div>
   );
