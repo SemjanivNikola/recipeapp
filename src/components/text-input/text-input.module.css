@@ -74,3 +74,9 @@ input.textInput:focus~.focusIndicator {
 .inputWrapper[data-error="true"] svg {
     fill: var(--danger);
 }
+
+.togglePassTypeBtn {
+    border: none;
+    outline: none!important;
+    background: transparent;
+}
