@@ -4,6 +4,9 @@ type IconName =
   | "chevron-right"
   | "dashboard"
   | "email-outline"
+  | "eye-closed"
+  | "eye-outline"
+  | "format-title"
   | "layers-plus"
   | "layers"
   | "lock-outline"
@@ -11,8 +14,7 @@ type IconName =
   | "pencil-outline"
   | "plus"
   | "signout"
-  | "user-outline"
-  | "format-title"
-  | "trash-can-outline";
+  | "trash-can-outline"
+  | "user-outline";
 
 export default IconName;
