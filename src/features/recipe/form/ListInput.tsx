@@ -31,6 +31,8 @@ const ListInput = ({ list, label, update }: { list: string[]; label: string; upd
     }
   }
 
+  const isEmptyValue = value === "";
+
   return (
     <>
       <p className={s.label}>{label}</p>
@@ -39,7 +41,7 @@ const ListInput = ({ list, label, update }: { list: string[]; label: string; upd
           <input value={value} onChange={onChange} className={s.listTextInput} onKeyDown={onKeyDown} />
           <span className={s.focusIndicator}></span>
         </div>
-        <button onClick={add} className={s.iconButton} type="button">
+        <button onClick={add} className={s.iconButton} type="button" disabled={isEmptyValue}>
           <Icon name="plus" size={18} color="var(--white)" />
         </button>
       </div>

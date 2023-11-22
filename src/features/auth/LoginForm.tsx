@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { LoginForm as FormType } from "./AuthFormType";
 import s from "./auth.module.css";
 import { rememberMe } from "./slices/authSlice";
+import PasswordInput from "@/components/text-input/PasswordInput";
 
 const initialValues = {
   email: "",
@@ -36,6 +37,8 @@ const LoginForm = () => {
       });
   };
 
+  console.log("render?");
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={s.authForm}>
       <Controller
@@ -49,6 +52,7 @@ const LoginForm = () => {
             type="email"
             label="Email"
             autoComplete="email"
+            icon="email-outline"
             isFocused
             error={formState.errors?.email?.message}
             {...props}
@@ -63,7 +67,7 @@ const LoginForm = () => {
           required: true,
         }}
         render={({ field: props }) => (
-          <TextInput type="password" label="Password" error={formState.errors?.password?.message} {...props} />
+          <PasswordInput label="Password" icon="lock-outline" error={formState.errors?.password?.message} {...props} />
         )}
       />
 

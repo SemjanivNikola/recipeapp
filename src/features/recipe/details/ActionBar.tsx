@@ -3,8 +3,10 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectRecipeIds } from "../slices/recipeSlice";
 import { isRecipeOwner } from "./recipeUtils";
+import DeleteAction from "./DeleteAction";
 
 const ActionBar = ({ recipeId }: { recipeId: string }) => {
+  
   const recipeIds = useSelector(selectRecipeIds);
   const isOwner = isRecipeOwner(recipeIds, recipeId);
 
@@ -17,10 +19,7 @@ const ActionBar = ({ recipeId }: { recipeId: string }) => {
             Edit
           </button>
         </Link>
-        <button type="button" className="btn-icon danger">
-          <Icon name="trash-can-outline" />
-          Delete
-        </button>
+        <DeleteAction recipeId={recipeId} />
       </div>
     );
 

@@ -1,22 +1,27 @@
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--s);
+    border-bottom: 2px solid var(--gray);
+    background-color: var(--white);
+}
+
 input.textInput {
     width: 100%;
-    height: 36px;
     outline: none;
     border: none;
     font-size: var(--font-m);
-    border-bottom: 2px solid var(--gray);
     appearance: none;
-    background-color: var(--white);
+    background: inherit;
     color: var(--dark);
-    padding-top: var(--s);
-    padding-left: var(--xs);
-    padding-right: var(--xs);
+    padding: var(--s) var(--xs);
 }
 
 .focusIndicator {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     height: 2px;
     width: 0;
@@ -24,29 +29,54 @@ input.textInput {
     transition: width 150ms ease-in-out;
 }
 
-input.textInput:focus + .inputLabel,
-input.textInput:not([value=""]) + .inputLabel {
-    top: 0;
-    font-size: var(--font-s);
-}
-
-input.textInput:focus + .inputLabel {
-    color: var(--primary-light);
-}
-
-input.textInput:focus ~ .focusIndicator {
-    width: 100%;
-}
-
 .inputLabel {
+    position: absolute;
     top: 50%;
-    left: 0;
+    left: 36px;
     transition: all 150ms ease-out;
 }
 
+input.textInput:focus+.inputLabel,
+input.textInput:not([value=""])+.inputLabel {
+    top: -0.25rem;
+    left: 0;
+    font-size: var(--font-xs);
+}
+
+input.textInput:focus+.inputLabel {
+    color: var(--primary-light);
+}
+
+input.textInput:focus~.focusIndicator {
+    width: 100%;
+}
+
 .inputError {
-    height: var(--m);
+    padding-top: var(--s);
     font-size: var(--font-xs);
     font-weight: 500;
     color: var(--danger);
+}
+
+.inputWrapper[data-error="true"] input.textInput {
+    color: var(--danger);
+}
+
+.inputWrapper[data-error="true"] .inputLabel,
+.inputWrapper[data-error="true"] input.textInput:focus+.inputLabel {
+    color: var(--danger);
+}
+
+.inputWrapper[data-error="true"] .focusIndicator {
+    background-color: var(--danger);
+}
+
+.inputWrapper[data-error="true"] svg {
+    fill: var(--danger);
+}
+
+.togglePassTypeBtn {
+    border: none;
+    outline: none!important;
+    background: transparent;
 }

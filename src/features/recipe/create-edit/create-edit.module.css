@@ -39,6 +39,10 @@
     padding-top: var(--s);
 }
 
+.listTextInput::placeholder {
+    color: var(--gray);
+}
+
 .focusIndicator {
     display: block;
     position: absolute;
@@ -65,6 +69,12 @@
 .iconButton {
     background-color: var(--primary);
     border: 1px solid var(--primary);
+}
+
+.iconButton:disabled {
+    background-color: var(--primary-light);
+    border: 1px solid var(--primary-light);
+    pointer-events: none;
 }
 
 .iconButtonDanger {
