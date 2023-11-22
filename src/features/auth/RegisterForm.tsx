@@ -5,6 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { RegisterForm as FormType } from "./AuthFormType";
 import s from "./auth.module.css";
+import PasswordInput from "@/components/text-input/PasswordInput";
 
 const initialValues = {
   fullName: "",
@@ -79,13 +80,7 @@ const RegisterForm = () => {
           },
         }}
         render={({ field: props }) => (
-          <TextInput
-            type="password"
-            label="Password"
-            icon="lock-outline"
-            error={formState.errors?.password?.message}
-            {...props}
-          />
+          <PasswordInput label="Password" icon="lock-outline" error={formState.errors?.password?.message} {...props} />
         )}
       />
 
